@@ -21,5 +21,6 @@ namespace Clone_wordpad
         {
             tabControl1.Size = new Size(this.Width, 126);
         }
+
     }
 }
