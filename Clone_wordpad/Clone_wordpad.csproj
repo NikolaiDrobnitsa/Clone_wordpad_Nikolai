@@ -95,5 +95,26 @@
   <ItemGroup>
     <None Include="Resources\copy.JPG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_up.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x_down.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fontplus.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minusfont.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_write.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center_write.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left_write.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
