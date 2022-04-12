@@ -116,5 +116,20 @@
   <ItemGroup>
     <None Include="Resources\Left_write.JPG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_paste.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_image.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TIME.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBJ.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

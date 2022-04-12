@@ -67,5 +67,15 @@ namespace Clone_wordpad
                 }
             }
         }
+
+        private void LeftWtireButton_Click(object sender, EventArgs e)
+        {
+            LeftWtireButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

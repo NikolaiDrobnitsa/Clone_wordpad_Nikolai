@@ -113,6 +113,16 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_paste {
+            get {
+                object obj = ResourceManager.GetObject("image_paste", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Left_write {
             get {
                 object obj = ResourceManager.GetObject("Left_write", resourceCulture);
@@ -126,6 +136,36 @@ namespace Clone_wordpad.Properties {
         internal static System.Drawing.Bitmap minusfont {
             get {
                 object obj = ResourceManager.GetObject("minusfont", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_image {
+            get {
+                object obj = ResourceManager.GetObject("new_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OBJ {
+            get {
+                object obj = ResourceManager.GetObject("OBJ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paint {
+            get {
+                object obj = ResourceManager.GetObject("paint", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +196,16 @@ namespace Clone_wordpad.Properties {
         internal static System.Drawing.Bitmap right_write {
             get {
                 object obj = ResourceManager.GetObject("right_write", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TIME {
+            get {
+                object obj = ResourceManager.GetObject("TIME", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
