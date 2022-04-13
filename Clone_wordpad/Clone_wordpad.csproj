@@ -123,12 +123,6 @@
     <None Include="Resources\new_image.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\paint.JPG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TIME.JPG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\OBJ.JPG" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +139,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\separator.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scale_plus.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dis_search.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_OBJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_Scale_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_Scale_minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_def_scale.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,6 +35,7 @@ namespace Clone_wordpad
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ClipboardLabel = new System.Windows.Forms.Label();
             this.FontBackColorbutton = new System.Windows.Forms.Button();
             this.FontColorbutton = new System.Windows.Forms.Button();
             this.CrossoutOutbutton = new System.Windows.Forms.Button();
@@ -44,16 +45,18 @@ namespace Clone_wordpad
             this.FontSizeComboBox = new System.Windows.Forms.ComboBox();
             this.FontSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SelectAllButton = new System.Windows.Forms.Button();
+            this.ReplaceButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.ObjButton = new System.Windows.Forms.Button();
+            this.TimeButton = new System.Windows.Forms.Button();
+            this.PaintButton = new System.Windows.Forms.Button();
+            this.img_button = new System.Windows.Forms.Button();
             this.RightWtireButton = new System.Windows.Forms.Button();
             this.CenterWtireButton = new System.Windows.Forms.Button();
             this.LeftWtireButton = new System.Windows.Forms.Button();
@@ -62,18 +65,34 @@ namespace Clone_wordpad
             this.Copybutton = new System.Windows.Forms.Button();
             this.Cutbutton = new System.Windows.Forms.Button();
             this.Pastebutton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.ClipboardLabel = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.WordWrapCheckBox = new System.Windows.Forms.CheckBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.StatusBarCheckBox = new System.Windows.Forms.CheckBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.Default_Scale = new System.Windows.Forms.Button();
+            this.MinusScaleButton = new System.Windows.Forms.Button();
+            this.PlusScaleButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.FontLabel = new System.Windows.Forms.Label();
+            this.Parafraphlabel = new System.Windows.Forms.Label();
+            this.PasteLabel = new System.Windows.Forms.Label();
+            this.EditingLabel = new System.Windows.Forms.Label();
+            this.ScaleLabel = new System.Windows.Forms.Label();
+            this.ShowOrPasteLabel = new System.Windows.Forms.Label();
+            this.SettingsLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -108,24 +127,11 @@ namespace Clone_wordpad
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
+            this.tabPage2.Controls.Add(this.EditingLabel);
+            this.tabPage2.Controls.Add(this.PasteLabel);
+            this.tabPage2.Controls.Add(this.Parafraphlabel);
+            this.tabPage2.Controls.Add(this.FontLabel);
             this.tabPage2.Controls.Add(this.ClipboardLabel);
-            this.tabPage2.Controls.Add(this.pictureBox5);
-            this.tabPage2.Controls.Add(this.pictureBox4);
-            this.tabPage2.Controls.Add(this.pictureBox3);
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.RightWtireButton);
-            this.tabPage2.Controls.Add(this.CenterWtireButton);
-            this.tabPage2.Controls.Add(this.LeftWtireButton);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.plusFontSizeButton);
             this.tabPage2.Controls.Add(this.FontBackColorbutton);
             this.tabPage2.Controls.Add(this.FontColorbutton);
             this.tabPage2.Controls.Add(this.CrossoutOutbutton);
@@ -134,9 +140,26 @@ namespace Clone_wordpad
             this.tabPage2.Controls.Add(this.Boltbutton);
             this.tabPage2.Controls.Add(this.FontSizeComboBox);
             this.tabPage2.Controls.Add(this.FontSelectorComboBox);
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.pictureBox5);
+            this.tabPage2.Controls.Add(this.pictureBox4);
+            this.tabPage2.Controls.Add(this.pictureBox3);
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.SelectAllButton);
+            this.tabPage2.Controls.Add(this.ReplaceButton);
+            this.tabPage2.Controls.Add(this.SearchButton);
+            this.tabPage2.Controls.Add(this.ObjButton);
+            this.tabPage2.Controls.Add(this.TimeButton);
+            this.tabPage2.Controls.Add(this.PaintButton);
+            this.tabPage2.Controls.Add(this.img_button);
+            this.tabPage2.Controls.Add(this.RightWtireButton);
+            this.tabPage2.Controls.Add(this.CenterWtireButton);
+            this.tabPage2.Controls.Add(this.LeftWtireButton);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.plusFontSizeButton);
             this.tabPage2.Controls.Add(this.Copybutton);
             this.tabPage2.Controls.Add(this.Cutbutton);
-            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.Pastebutton);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -144,6 +167,16 @@ namespace Clone_wordpad
             this.tabPage2.Size = new System.Drawing.Size(975, 100);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Главная";
+            // 
+            // ClipboardLabel
+            // 
+            this.ClipboardLabel.AutoSize = true;
+            this.ClipboardLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClipboardLabel.Location = new System.Drawing.Point(49, 86);
+            this.ClipboardLabel.Name = "ClipboardLabel";
+            this.ClipboardLabel.Size = new System.Drawing.Size(80, 13);
+            this.ClipboardLabel.TabIndex = 33;
+            this.ClipboardLabel.Text = "Буфер обмена";
             // 
             // FontBackColorbutton
             // 
@@ -257,21 +290,45 @@ namespace Clone_wordpad
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Вставить";
             // 
-            // tabPage3
+            // pictureBox5
             // 
-            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(975, 100);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Вид";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.pictureBox5.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(919, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(15, 100);
+            this.pictureBox5.TabIndex = 32;
+            this.pictureBox5.TabStop = false;
             // 
-            // contextMenuStrip1
+            // pictureBox4
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.pictureBox4.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(432, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(10, 100);
+            this.pictureBox4.TabIndex = 31;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Location = new System.Drawing.Point(793, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(15, 100);
+            this.pictureBox3.TabIndex = 30;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(536, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(15, 100);
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -283,116 +340,116 @@ namespace Clone_wordpad
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
-            // button8
+            // SelectAllButton
             // 
-            this.button8.BackgroundImage = global::Clone_wordpad.Properties.Resources.select_all;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(811, 62);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 22);
-            this.button8.TabIndex = 27;
-            this.button8.UseVisualStyleBackColor = true;
+            this.SelectAllButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SelectAllButton.FlatAppearance.BorderSize = 0;
+            this.SelectAllButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.SelectAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectAllButton.Image = global::Clone_wordpad.Properties.Resources.select_all;
+            this.SelectAllButton.Location = new System.Drawing.Point(811, 62);
+            this.SelectAllButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SelectAllButton.Name = "SelectAllButton";
+            this.SelectAllButton.Size = new System.Drawing.Size(105, 22);
+            this.SelectAllButton.TabIndex = 27;
+            this.SelectAllButton.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // ReplaceButton
             // 
-            this.button7.BackgroundImage = global::Clone_wordpad.Properties.Resources.compare;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(811, 35);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(72, 22);
-            this.button7.TabIndex = 26;
-            this.button7.UseVisualStyleBackColor = true;
+            this.ReplaceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ReplaceButton.FlatAppearance.BorderSize = 0;
+            this.ReplaceButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.ReplaceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReplaceButton.Image = global::Clone_wordpad.Properties.Resources.compare;
+            this.ReplaceButton.Location = new System.Drawing.Point(811, 35);
+            this.ReplaceButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ReplaceButton.Name = "ReplaceButton";
+            this.ReplaceButton.Size = new System.Drawing.Size(72, 22);
+            this.ReplaceButton.TabIndex = 26;
+            this.ReplaceButton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // SearchButton
             // 
-            this.button6.BackgroundImage = global::Clone_wordpad.Properties.Resources.search;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(811, 6);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 21);
-            this.button6.TabIndex = 25;
-            this.button6.UseVisualStyleBackColor = true;
+            this.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SearchButton.FlatAppearance.BorderSize = 0;
+            this.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.Image = global::Clone_wordpad.Properties.Resources.search;
+            this.SearchButton.Location = new System.Drawing.Point(811, 6);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(64, 21);
+            this.SearchButton.TabIndex = 25;
+            this.SearchButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // ObjButton
             // 
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::Clone_wordpad.Properties.Resources.OBJ;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(741, 6);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 62);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Обьект";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
+            this.ObjButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ObjButton.FlatAppearance.BorderSize = 0;
+            this.ObjButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.ObjButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ObjButton.Image = global::Clone_wordpad.Properties.Resources.new_OBJ;
+            this.ObjButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ObjButton.Location = new System.Drawing.Point(741, 6);
+            this.ObjButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ObjButton.Name = "ObjButton";
+            this.ObjButton.Size = new System.Drawing.Size(53, 62);
+            this.ObjButton.TabIndex = 24;
+            this.ObjButton.Text = "Обьект";
+            this.ObjButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ObjButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // TimeButton
             // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Clone_wordpad.Properties.Resources.TIME;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(688, 3);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 73);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Дата и время";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.TimeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TimeButton.FlatAppearance.BorderSize = 0;
+            this.TimeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.TimeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TimeButton.Image = global::Clone_wordpad.Properties.Resources.new_time;
+            this.TimeButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.TimeButton.Location = new System.Drawing.Point(688, 3);
+            this.TimeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.TimeButton.Name = "TimeButton";
+            this.TimeButton.Size = new System.Drawing.Size(53, 73);
+            this.TimeButton.TabIndex = 23;
+            this.TimeButton.Text = "Дата и время";
+            this.TimeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TimeButton.UseVisualStyleBackColor = true;
+            this.TimeButton.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // PaintButton
             // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Clone_wordpad.Properties.Resources.paint;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(630, 3);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 73);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Рисунок\nPaint";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.PaintButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PaintButton.FlatAppearance.BorderSize = 0;
+            this.PaintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.PaintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaintButton.Image = global::Clone_wordpad.Properties.Resources.new_paint;
+            this.PaintButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PaintButton.Location = new System.Drawing.Point(630, 3);
+            this.PaintButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PaintButton.Name = "PaintButton";
+            this.PaintButton.Size = new System.Drawing.Size(58, 73);
+            this.PaintButton.TabIndex = 22;
+            this.PaintButton.Text = "Рисунок\nPaint";
+            this.PaintButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PaintButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // img_button
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Clone_wordpad.Properties.Resources.new_image;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(545, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 62);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Изображение";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.img_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.img_button.FlatAppearance.BorderSize = 0;
+            this.img_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.img_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.img_button.Image = global::Clone_wordpad.Properties.Resources.new_image;
+            this.img_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.img_button.Location = new System.Drawing.Point(545, 6);
+            this.img_button.Margin = new System.Windows.Forms.Padding(0);
+            this.img_button.Name = "img_button";
+            this.img_button.Size = new System.Drawing.Size(85, 62);
+            this.img_button.TabIndex = 21;
+            this.img_button.Text = "Изображение";
+            this.img_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.img_button.UseVisualStyleBackColor = true;
             // 
             // RightWtireButton
             // 
@@ -512,54 +569,213 @@ namespace Clone_wordpad
             this.Pastebutton.TabIndex = 0;
             this.Pastebutton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // tabPage3
             // 
-            this.pictureBox2.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(536, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(15, 100);
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
+            this.tabPage3.Controls.Add(this.SettingsLabel);
+            this.tabPage3.Controls.Add(this.ShowOrPasteLabel);
+            this.tabPage3.Controls.Add(this.ScaleLabel);
+            this.tabPage3.Controls.Add(this.pictureBox8);
+            this.tabPage3.Controls.Add(this.WordWrapCheckBox);
+            this.tabPage3.Controls.Add(this.pictureBox7);
+            this.tabPage3.Controls.Add(this.StatusBarCheckBox);
+            this.tabPage3.Controls.Add(this.pictureBox6);
+            this.tabPage3.Controls.Add(this.Default_Scale);
+            this.tabPage3.Controls.Add(this.MinusScaleButton);
+            this.tabPage3.Controls.Add(this.PlusScaleButton);
+            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(975, 100);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Вид";
             // 
-            // pictureBox3
+            // pictureBox8
             // 
-            this.pictureBox3.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Location = new System.Drawing.Point(793, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(15, 100);
-            this.pictureBox3.TabIndex = 30;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox8.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox8.Location = new System.Drawing.Point(472, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(13, 100);
+            this.pictureBox8.TabIndex = 33;
+            this.pictureBox8.TabStop = false;
             // 
-            // pictureBox4
+            // WordWrapCheckBox
             // 
-            this.pictureBox4.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(432, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(10, 100);
-            this.pictureBox4.TabIndex = 31;
-            this.pictureBox4.TabStop = false;
+            this.WordWrapCheckBox.AutoSize = true;
+            this.WordWrapCheckBox.Location = new System.Drawing.Point(349, 14);
+            this.WordWrapCheckBox.Name = "WordWrapCheckBox";
+            this.WordWrapCheckBox.Size = new System.Drawing.Size(126, 17);
+            this.WordWrapCheckBox.TabIndex = 32;
+            this.WordWrapCheckBox.Text = "Перенос по словам";
+            this.WordWrapCheckBox.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
+            // pictureBox7
             // 
-            this.pictureBox5.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(919, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(15, 100);
-            this.pictureBox5.TabIndex = 32;
-            this.pictureBox5.TabStop = false;
+            this.pictureBox7.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox7.Location = new System.Drawing.Point(330, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(13, 100);
+            this.pictureBox7.TabIndex = 31;
+            this.pictureBox7.TabStop = false;
             // 
-            // ClipboardLabel
+            // StatusBarCheckBox
             // 
-            this.ClipboardLabel.AutoSize = true;
-            this.ClipboardLabel.Location = new System.Drawing.Point(49, 86);
-            this.ClipboardLabel.Name = "ClipboardLabel";
-            this.ClipboardLabel.Size = new System.Drawing.Size(80, 13);
-            this.ClipboardLabel.TabIndex = 33;
-            this.ClipboardLabel.Text = "Буфер обмена";
+            this.StatusBarCheckBox.AutoSize = true;
+            this.StatusBarCheckBox.Location = new System.Drawing.Point(206, 14);
+            this.StatusBarCheckBox.Name = "StatusBarCheckBox";
+            this.StatusBarCheckBox.Size = new System.Drawing.Size(118, 17);
+            this.StatusBarCheckBox.TabIndex = 30;
+            this.StatusBarCheckBox.Text = "Строка состояния";
+            this.StatusBarCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox6.Location = new System.Drawing.Point(187, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(13, 100);
+            this.pictureBox6.TabIndex = 29;
+            this.pictureBox6.TabStop = false;
+            // 
+            // Default_Scale
+            // 
+            this.Default_Scale.BackColor = System.Drawing.Color.Transparent;
+            this.Default_Scale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Default_Scale.FlatAppearance.BorderSize = 0;
+            this.Default_Scale.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.Default_Scale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Default_Scale.Image = global::Clone_wordpad.Properties.Resources.new_def_scale;
+            this.Default_Scale.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Default_Scale.Location = new System.Drawing.Point(150, 14);
+            this.Default_Scale.Margin = new System.Windows.Forms.Padding(0);
+            this.Default_Scale.Name = "Default_Scale";
+            this.Default_Scale.Size = new System.Drawing.Size(34, 70);
+            this.Default_Scale.TabIndex = 24;
+            this.Default_Scale.Text = "100\n%";
+            this.Default_Scale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Default_Scale.UseVisualStyleBackColor = true;
+            // 
+            // MinusScaleButton
+            // 
+            this.MinusScaleButton.BackColor = System.Drawing.Color.Transparent;
+            this.MinusScaleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MinusScaleButton.FlatAppearance.BorderSize = 0;
+            this.MinusScaleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.MinusScaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinusScaleButton.Image = global::Clone_wordpad.Properties.Resources.new_Scale_minus;
+            this.MinusScaleButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MinusScaleButton.Location = new System.Drawing.Point(76, 14);
+            this.MinusScaleButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MinusScaleButton.Name = "MinusScaleButton";
+            this.MinusScaleButton.Size = new System.Drawing.Size(74, 62);
+            this.MinusScaleButton.TabIndex = 23;
+            this.MinusScaleButton.Text = "Уменьшить";
+            this.MinusScaleButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MinusScaleButton.UseVisualStyleBackColor = true;
+            // 
+            // PlusScaleButton
+            // 
+            this.PlusScaleButton.BackColor = System.Drawing.Color.Transparent;
+            this.PlusScaleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PlusScaleButton.FlatAppearance.BorderSize = 0;
+            this.PlusScaleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.PlusScaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlusScaleButton.Image = global::Clone_wordpad.Properties.Resources.new_Scale_plus;
+            this.PlusScaleButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PlusScaleButton.Location = new System.Drawing.Point(5, 14);
+            this.PlusScaleButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PlusScaleButton.Name = "PlusScaleButton";
+            this.PlusScaleButton.Size = new System.Drawing.Size(71, 62);
+            this.PlusScaleButton.TabIndex = 22;
+            this.PlusScaleButton.Text = "Увеличить";
+            this.PlusScaleButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PlusScaleButton.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // FontLabel
+            // 
+            this.FontLabel.AutoSize = true;
+            this.FontLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FontLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.FontLabel.Location = new System.Drawing.Point(289, 82);
+            this.FontLabel.Name = "FontLabel";
+            this.FontLabel.Size = new System.Drawing.Size(50, 15);
+            this.FontLabel.TabIndex = 34;
+            this.FontLabel.Text = "Шрифт";
+            // 
+            // Parafraphlabel
+            // 
+            this.Parafraphlabel.AutoSize = true;
+            this.Parafraphlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Parafraphlabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Parafraphlabel.Location = new System.Drawing.Point(470, 82);
+            this.Parafraphlabel.Name = "Parafraphlabel";
+            this.Parafraphlabel.Size = new System.Drawing.Size(41, 15);
+            this.Parafraphlabel.TabIndex = 35;
+            this.Parafraphlabel.Text = "Абзац";
+            // 
+            // PasteLabel
+            // 
+            this.PasteLabel.AutoSize = true;
+            this.PasteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasteLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.PasteLabel.Location = new System.Drawing.Point(653, 84);
+            this.PasteLabel.Name = "PasteLabel";
+            this.PasteLabel.Size = new System.Drawing.Size(55, 15);
+            this.PasteLabel.TabIndex = 36;
+            this.PasteLabel.Text = "Вставка";
+            // 
+            // EditingLabel
+            // 
+            this.EditingLabel.AutoSize = true;
+            this.EditingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditingLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.EditingLabel.Location = new System.Drawing.Point(838, 84);
+            this.EditingLabel.Name = "EditingLabel";
+            this.EditingLabel.Size = new System.Drawing.Size(50, 15);
+            this.EditingLabel.TabIndex = 37;
+            this.EditingLabel.Text = "Правка";
+            // 
+            // ScaleLabel
+            // 
+            this.ScaleLabel.AutoSize = true;
+            this.ScaleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScaleLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.ScaleLabel.Location = new System.Drawing.Point(73, 82);
+            this.ScaleLabel.Name = "ScaleLabel";
+            this.ScaleLabel.Size = new System.Drawing.Size(55, 15);
+            this.ScaleLabel.TabIndex = 35;
+            this.ScaleLabel.Text = "Маштаб";
+            // 
+            // ShowOrPasteLabel
+            // 
+            this.ShowOrPasteLabel.AutoSize = true;
+            this.ShowOrPasteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowOrPasteLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.ShowOrPasteLabel.Location = new System.Drawing.Point(207, 82);
+            this.ShowOrPasteLabel.Name = "ShowOrPasteLabel";
+            this.ShowOrPasteLabel.Size = new System.Drawing.Size(117, 13);
+            this.ShowOrPasteLabel.TabIndex = 36;
+            this.ShowOrPasteLabel.Text = "Показать или скрыть";
+            // 
+            // SettingsLabel
+            // 
+            this.SettingsLabel.AutoSize = true;
+            this.SettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SettingsLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.SettingsLabel.Location = new System.Drawing.Point(370, 82);
+            this.SettingsLabel.Name = "SettingsLabel";
+            this.SettingsLabel.Size = new System.Drawing.Size(76, 15);
+            this.SettingsLabel.TabIndex = 37;
+            this.SettingsLabel.Text = "Параметры";
             // 
             // Form1
             // 
@@ -574,11 +790,16 @@ namespace Clone_wordpad
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,19 +830,34 @@ namespace Clone_wordpad
         private System.Windows.Forms.Button RightWtireButton;
         private System.Windows.Forms.Button CenterWtireButton;
         private System.Windows.Forms.Button LeftWtireButton;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button img_button;
+        private System.Windows.Forms.Button PaintButton;
+        private System.Windows.Forms.Button TimeButton;
+        private System.Windows.Forms.Button ObjButton;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button ReplaceButton;
+        private System.Windows.Forms.Button SelectAllButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label ClipboardLabel;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button PlusScaleButton;
+        private System.Windows.Forms.Button MinusScaleButton;
+        private System.Windows.Forms.Button Default_Scale;
+        private System.Windows.Forms.CheckBox WordWrapCheckBox;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.CheckBox StatusBarCheckBox;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label EditingLabel;
+        private System.Windows.Forms.Label PasteLabel;
+        private System.Windows.Forms.Label Parafraphlabel;
+        private System.Windows.Forms.Label FontLabel;
+        private System.Windows.Forms.Label SettingsLabel;
+        private System.Windows.Forms.Label ShowOrPasteLabel;
+        private System.Windows.Forms.Label ScaleLabel;
     }
 }
 

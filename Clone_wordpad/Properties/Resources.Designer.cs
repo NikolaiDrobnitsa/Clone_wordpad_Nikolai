@@ -123,6 +123,16 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dis_search {
+            get {
+                object obj = ResourceManager.GetObject("dis_search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fontplus {
             get {
                 object obj = ResourceManager.GetObject("fontplus", resourceCulture);
@@ -163,6 +173,16 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap new_def_scale {
+            get {
+                object obj = ResourceManager.GetObject("new_def_scale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap new_image {
             get {
                 object obj = ResourceManager.GetObject("new_image", resourceCulture);
@@ -173,9 +193,9 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OBJ {
+        internal static System.Drawing.Bitmap new_OBJ {
             get {
-                object obj = ResourceManager.GetObject("OBJ", resourceCulture);
+                object obj = ResourceManager.GetObject("new_OBJ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +203,49 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap paint {
+        internal static System.Drawing.Bitmap new_paint {
             get {
-                object obj = ResourceManager.GetObject("paint", resourceCulture);
+                object obj = ResourceManager.GetObject("new_paint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_Scale_minus {
+            get {
+                object obj = ResourceManager.GetObject("new_Scale_minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_Scale_plus {
+            get {
+                object obj = ResourceManager.GetObject("new_Scale_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_time {
+            get {
+                object obj = ResourceManager.GetObject("new_time", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OBJ {
+            get {
+                object obj = ResourceManager.GetObject("OBJ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +283,16 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Scale_plus {
+            get {
+                object obj = ResourceManager.GetObject("Scale_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
@@ -246,16 +316,6 @@ namespace Clone_wordpad.Properties {
         internal static System.Drawing.Bitmap separator {
             get {
                 object obj = ResourceManager.GetObject("separator", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TIME {
-            get {
-                object obj = ResourceManager.GetObject("TIME", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
