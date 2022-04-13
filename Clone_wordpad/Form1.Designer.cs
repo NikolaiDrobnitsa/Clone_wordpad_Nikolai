@@ -20,6 +20,7 @@ namespace Clone_wordpad
             }
             base.Dispose(disposing);
         }
+        
 
         #region Код, автоматически созданный конструктором форм Windows
 
@@ -45,6 +46,10 @@ namespace Clone_wordpad
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,8 +62,18 @@ namespace Clone_wordpad
             this.Copybutton = new System.Windows.Forms.Button();
             this.Cutbutton = new System.Windows.Forms.Button();
             this.Pastebutton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ClipboardLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -93,6 +108,15 @@ namespace Clone_wordpad
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
+            this.tabPage2.Controls.Add(this.ClipboardLabel);
+            this.tabPage2.Controls.Add(this.pictureBox5);
+            this.tabPage2.Controls.Add(this.pictureBox4);
+            this.tabPage2.Controls.Add(this.pictureBox3);
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
@@ -249,6 +273,58 @@ namespace Clone_wordpad
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(180, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(13, 100);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = global::Clone_wordpad.Properties.Resources.select_all;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(811, 62);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(105, 22);
+            this.button8.TabIndex = 27;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::Clone_wordpad.Properties.Resources.compare;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(811, 35);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(72, 22);
+            this.button7.TabIndex = 26;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::Clone_wordpad.Properties.Resources.search;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(811, 6);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(64, 21);
+            this.button6.TabIndex = 25;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -257,10 +333,10 @@ namespace Clone_wordpad
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = global::Clone_wordpad.Properties.Resources.OBJ;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(726, 6);
+            this.button5.Location = new System.Drawing.Point(741, 6);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 58);
+            this.button5.Size = new System.Drawing.Size(53, 62);
             this.button5.TabIndex = 24;
             this.button5.Text = "Обьект";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -274,7 +350,7 @@ namespace Clone_wordpad
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::Clone_wordpad.Properties.Resources.TIME;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(673, 3);
+            this.button4.Location = new System.Drawing.Point(688, 3);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(53, 73);
@@ -292,10 +368,10 @@ namespace Clone_wordpad
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::Clone_wordpad.Properties.Resources.paint;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(615, 3);
+            this.button3.Location = new System.Drawing.Point(630, 3);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 70);
+            this.button3.Size = new System.Drawing.Size(58, 73);
             this.button3.TabIndex = 22;
             this.button3.Text = "Рисунок\nPaint";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -309,7 +385,7 @@ namespace Clone_wordpad
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::Clone_wordpad.Properties.Resources.new_image;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(530, 6);
+            this.button2.Location = new System.Drawing.Point(545, 6);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 62);
@@ -327,7 +403,7 @@ namespace Clone_wordpad
             this.RightWtireButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.RightWtireButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RightWtireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RightWtireButton.Location = new System.Drawing.Point(501, 11);
+            this.RightWtireButton.Location = new System.Drawing.Point(508, 11);
             this.RightWtireButton.Name = "RightWtireButton";
             this.RightWtireButton.Size = new System.Drawing.Size(26, 25);
             this.RightWtireButton.TabIndex = 20;
@@ -342,7 +418,7 @@ namespace Clone_wordpad
             this.CenterWtireButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.CenterWtireButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CenterWtireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CenterWtireButton.Location = new System.Drawing.Point(469, 11);
+            this.CenterWtireButton.Location = new System.Drawing.Point(476, 11);
             this.CenterWtireButton.Name = "CenterWtireButton";
             this.CenterWtireButton.Size = new System.Drawing.Size(26, 25);
             this.CenterWtireButton.TabIndex = 19;
@@ -357,7 +433,7 @@ namespace Clone_wordpad
             this.LeftWtireButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.LeftWtireButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LeftWtireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LeftWtireButton.Location = new System.Drawing.Point(437, 11);
+            this.LeftWtireButton.Location = new System.Drawing.Point(444, 11);
             this.LeftWtireButton.Name = "LeftWtireButton";
             this.LeftWtireButton.Size = new System.Drawing.Size(26, 25);
             this.LeftWtireButton.TabIndex = 18;
@@ -436,6 +512,55 @@ namespace Clone_wordpad
             this.Pastebutton.TabIndex = 0;
             this.Pastebutton.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(536, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(15, 100);
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Location = new System.Drawing.Point(793, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(15, 100);
+            this.pictureBox3.TabIndex = 30;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(432, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(10, 100);
+            this.pictureBox4.TabIndex = 31;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(919, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(15, 100);
+            this.pictureBox5.TabIndex = 32;
+            this.pictureBox5.TabStop = false;
+            // 
+            // ClipboardLabel
+            // 
+            this.ClipboardLabel.AutoSize = true;
+            this.ClipboardLabel.Location = new System.Drawing.Point(49, 86);
+            this.ClipboardLabel.Name = "ClipboardLabel";
+            this.ClipboardLabel.Size = new System.Drawing.Size(80, 13);
+            this.ClipboardLabel.TabIndex = 33;
+            this.ClipboardLabel.Text = "Буфер обмена";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,6 +573,12 @@ namespace Clone_wordpad
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,6 +613,15 @@ namespace Clone_wordpad
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label ClipboardLabel;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

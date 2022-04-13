@@ -131,5 +131,20 @@
   <ItemGroup>
     <None Include="Resources\OBJ.JPG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_disable.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compare.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_all.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\separator.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
