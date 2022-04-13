@@ -31,6 +31,7 @@ namespace Clone_wordpad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -82,6 +83,12 @@ namespace Clone_wordpad
             this.ScaleLabel = new System.Windows.Forms.Label();
             this.ShowOrPasteLabel = new System.Windows.Forms.Label();
             this.SettingsLabel = new System.Windows.Forms.Label();
+            this.IcontoolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.SavetoolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.UndoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.RedoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -97,6 +104,12 @@ namespace Clone_wordpad
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.IcontoolStripButton1,
+            this.toolStripSeparator1,
+            this.SavetoolStripButton,
+            this.UndoToolStripButton,
+            this.RedoToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(983, 25);
@@ -777,6 +790,47 @@ namespace Clone_wordpad
             this.SettingsLabel.TabIndex = 37;
             this.SettingsLabel.Text = "Параметры";
             // 
+            // IcontoolStripButton1
+            // 
+            this.IcontoolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.IcontoolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("IcontoolStripButton1.Image")));
+            this.IcontoolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.IcontoolStripButton1.Name = "IcontoolStripButton1";
+            this.IcontoolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.IcontoolStripButton1.Text = "toolStripButton1";
+            // 
+            // SavetoolStripButton
+            // 
+            this.SavetoolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SavetoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SavetoolStripButton.Image")));
+            this.SavetoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SavetoolStripButton.Name = "SavetoolStripButton";
+            this.SavetoolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.SavetoolStripButton.Text = "toolStripButton2";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // UndoToolStripButton
+            // 
+            this.UndoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.UndoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UndoToolStripButton.Image")));
+            this.UndoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UndoToolStripButton.Name = "UndoToolStripButton";
+            this.UndoToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.UndoToolStripButton.Text = "toolStripButton3";
+            // 
+            // RedoToolStripButton
+            // 
+            this.RedoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RedoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("RedoToolStripButton.Image")));
+            this.RedoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RedoToolStripButton.Name = "RedoToolStripButton";
+            this.RedoToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.RedoToolStripButton.Text = "toolStripButton4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -784,9 +838,12 @@ namespace Clone_wordpad
             this.ClientSize = new System.Drawing.Size(983, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -858,6 +915,11 @@ namespace Clone_wordpad
         private System.Windows.Forms.Label SettingsLabel;
         private System.Windows.Forms.Label ShowOrPasteLabel;
         private System.Windows.Forms.Label ScaleLabel;
+        private System.Windows.Forms.ToolStripButton IcontoolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton SavetoolStripButton;
+        private System.Windows.Forms.ToolStripButton UndoToolStripButton;
+        private System.Windows.Forms.ToolStripButton RedoToolStripButton;
     }
 }
 
