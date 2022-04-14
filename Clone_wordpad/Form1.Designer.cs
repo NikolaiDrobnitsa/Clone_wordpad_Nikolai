@@ -30,12 +30,28 @@ namespace Clone_wordpad
         /// </summary>
         private void InitializeComponent()
         {
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.FileNameLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.MinimizeWindowButton = new System.Windows.Forms.Button();
+            this.MaximizeWindowButton = new System.Windows.Forms.Button();
+            this.CloseWindowButton = new System.Windows.Forms.Button();
+            this.RedoButton = new System.Windows.Forms.Button();
+            this.UndoButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.RichTextBoxEditor = new System.Windows.Forms.RichTextBox();
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.EditingLabel = new System.Windows.Forms.Label();
+            this.PasteLabel = new System.Windows.Forms.Label();
+            this.Parafraphlabel = new System.Windows.Forms.Label();
+            this.FontLabel = new System.Windows.Forms.Label();
             this.ClipboardLabel = new System.Windows.Forms.Label();
             this.FontBackColorbutton = new System.Windows.Forms.Button();
             this.FontColorbutton = new System.Windows.Forms.Button();
@@ -67,6 +83,9 @@ namespace Clone_wordpad
             this.Cutbutton = new System.Windows.Forms.Button();
             this.Pastebutton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.SettingsLabel = new System.Windows.Forms.Label();
+            this.ShowOrPasteLabel = new System.Windows.Forms.Label();
+            this.ScaleLabel = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.WordWrapCheckBox = new System.Windows.Forms.CheckBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -76,21 +95,13 @@ namespace Clone_wordpad
             this.MinusScaleButton = new System.Windows.Forms.Button();
             this.PlusScaleButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.FontLabel = new System.Windows.Forms.Label();
-            this.Parafraphlabel = new System.Windows.Forms.Label();
-            this.PasteLabel = new System.Windows.Forms.Label();
-            this.EditingLabel = new System.Windows.Forms.Label();
-            this.ScaleLabel = new System.Windows.Forms.Label();
-            this.ShowOrPasteLabel = new System.Windows.Forms.Label();
-            this.SettingsLabel = new System.Windows.Forms.Label();
-            this.IcontoolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.SavetoolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.UndoToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.RedoToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.HeaderPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,20 +112,6 @@ namespace Clone_wordpad
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.IcontoolStripButton1,
-            this.toolStripSeparator1,
-            this.SavetoolStripButton,
-            this.UndoToolStripButton,
-            this.RedoToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(983, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "Вид";
             // 
             // tabControl1
             // 
@@ -180,6 +177,50 @@ namespace Clone_wordpad
             this.tabPage2.Size = new System.Drawing.Size(975, 100);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Главная";
+            // 
+            // EditingLabel
+            // 
+            this.EditingLabel.AutoSize = true;
+            this.EditingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditingLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.EditingLabel.Location = new System.Drawing.Point(838, 84);
+            this.EditingLabel.Name = "EditingLabel";
+            this.EditingLabel.Size = new System.Drawing.Size(50, 15);
+            this.EditingLabel.TabIndex = 37;
+            this.EditingLabel.Text = "Правка";
+            // 
+            // PasteLabel
+            // 
+            this.PasteLabel.AutoSize = true;
+            this.PasteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasteLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.PasteLabel.Location = new System.Drawing.Point(653, 84);
+            this.PasteLabel.Name = "PasteLabel";
+            this.PasteLabel.Size = new System.Drawing.Size(55, 15);
+            this.PasteLabel.TabIndex = 36;
+            this.PasteLabel.Text = "Вставка";
+            // 
+            // Parafraphlabel
+            // 
+            this.Parafraphlabel.AutoSize = true;
+            this.Parafraphlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Parafraphlabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Parafraphlabel.Location = new System.Drawing.Point(470, 82);
+            this.Parafraphlabel.Name = "Parafraphlabel";
+            this.Parafraphlabel.Size = new System.Drawing.Size(41, 15);
+            this.Parafraphlabel.TabIndex = 35;
+            this.Parafraphlabel.Text = "Абзац";
+            // 
+            // FontLabel
+            // 
+            this.FontLabel.AutoSize = true;
+            this.FontLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FontLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.FontLabel.Location = new System.Drawing.Point(289, 82);
+            this.FontLabel.Name = "FontLabel";
+            this.FontLabel.Size = new System.Drawing.Size(50, 15);
+            this.FontLabel.TabIndex = 34;
+            this.FontLabel.Text = "Шрифт";
             // 
             // ClipboardLabel
             // 
@@ -604,6 +645,39 @@ namespace Clone_wordpad
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Вид";
             // 
+            // SettingsLabel
+            // 
+            this.SettingsLabel.AutoSize = true;
+            this.SettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SettingsLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.SettingsLabel.Location = new System.Drawing.Point(370, 82);
+            this.SettingsLabel.Name = "SettingsLabel";
+            this.SettingsLabel.Size = new System.Drawing.Size(76, 15);
+            this.SettingsLabel.TabIndex = 37;
+            this.SettingsLabel.Text = "Параметры";
+            // 
+            // ShowOrPasteLabel
+            // 
+            this.ShowOrPasteLabel.AutoSize = true;
+            this.ShowOrPasteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowOrPasteLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.ShowOrPasteLabel.Location = new System.Drawing.Point(207, 82);
+            this.ShowOrPasteLabel.Name = "ShowOrPasteLabel";
+            this.ShowOrPasteLabel.Size = new System.Drawing.Size(117, 13);
+            this.ShowOrPasteLabel.TabIndex = 36;
+            this.ShowOrPasteLabel.Text = "Показать или скрыть";
+            // 
+            // ScaleLabel
+            // 
+            this.ScaleLabel.AutoSize = true;
+            this.ScaleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScaleLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.ScaleLabel.Location = new System.Drawing.Point(73, 82);
+            this.ScaleLabel.Name = "ScaleLabel";
+            this.ScaleLabel.Size = new System.Drawing.Size(55, 15);
+            this.ScaleLabel.TabIndex = 35;
+            this.ScaleLabel.Text = "Маштаб";
+            // 
             // pictureBox8
             // 
             this.pictureBox8.BackgroundImage = global::Clone_wordpad.Properties.Resources.separator;
@@ -712,138 +786,241 @@ namespace Clone_wordpad
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.HeaderPanel.Controls.Add(this.panel4);
+            this.HeaderPanel.Controls.Add(this.panel2);
+            this.HeaderPanel.Controls.Add(this.MinimizeWindowButton);
+            this.HeaderPanel.Controls.Add(this.MaximizeWindowButton);
+            this.HeaderPanel.Controls.Add(this.CloseWindowButton);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.Location = new System.Drawing.Point(4, 0);
+            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(883, 30);
+            this.HeaderPanel.TabIndex = 0;
             // 
-            // FontLabel
+            // panel4
             // 
-            this.FontLabel.AutoSize = true;
-            this.FontLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FontLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.FontLabel.Location = new System.Drawing.Point(289, 82);
-            this.FontLabel.Name = "FontLabel";
-            this.FontLabel.Size = new System.Drawing.Size(50, 15);
-            this.FontLabel.TabIndex = 34;
-            this.FontLabel.Text = "Шрифт";
+            this.panel4.Controls.Add(this.FileNameLabel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(793, 30);
+            this.panel4.TabIndex = 4;
             // 
-            // Parafraphlabel
+            // FileNameLabel
             // 
-            this.Parafraphlabel.AutoSize = true;
-            this.Parafraphlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Parafraphlabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Parafraphlabel.Location = new System.Drawing.Point(470, 82);
-            this.Parafraphlabel.Name = "Parafraphlabel";
-            this.Parafraphlabel.Size = new System.Drawing.Size(41, 15);
-            this.Parafraphlabel.TabIndex = 35;
-            this.Parafraphlabel.Text = "Абзац";
+            this.FileNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FileNameLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F);
+            this.FileNameLabel.Location = new System.Drawing.Point(0, 0);
+            this.FileNameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.FileNameLabel.Name = "FileNameLabel";
+            this.FileNameLabel.Size = new System.Drawing.Size(793, 30);
+            this.FileNameLabel.TabIndex = 3;
+            this.FileNameLabel.Text = "Новый документ - Nikolai_WordPad";
+            this.FileNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FileNameLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowDrag);
             // 
-            // PasteLabel
+            // panel2
             // 
-            this.PasteLabel.AutoSize = true;
-            this.PasteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PasteLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.PasteLabel.Location = new System.Drawing.Point(653, 84);
-            this.PasteLabel.Name = "PasteLabel";
-            this.PasteLabel.Size = new System.Drawing.Size(55, 15);
-            this.PasteLabel.TabIndex = 36;
-            this.PasteLabel.Text = "Вставка";
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.Controls.Add(this.RedoButton);
+            this.panel2.Controls.Add(this.UndoButton);
+            this.panel2.Controls.Add(this.SaveButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(90, 30);
+            this.panel2.TabIndex = 7;
             // 
-            // EditingLabel
+            // MinimizeWindowButton
             // 
-            this.EditingLabel.AutoSize = true;
-            this.EditingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditingLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.EditingLabel.Location = new System.Drawing.Point(838, 84);
-            this.EditingLabel.Name = "EditingLabel";
-            this.EditingLabel.Size = new System.Drawing.Size(50, 15);
-            this.EditingLabel.TabIndex = 37;
-            this.EditingLabel.Text = "Правка";
+            this.MinimizeWindowButton.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeWindowButton.FlatAppearance.BorderSize = 0;
+            this.MinimizeWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.MinimizeWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.MinimizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.MinimizeWindowButton.Location = new System.Drawing.Point(793, 0);
+            this.MinimizeWindowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimizeWindowButton.Name = "MinimizeWindowButton";
+            this.MinimizeWindowButton.Size = new System.Drawing.Size(30, 30);
+            this.MinimizeWindowButton.TabIndex = 2;
+            this.MinimizeWindowButton.Text = "_";
+            //this.toolTip12.SetToolTip(this.MinimizeWindowButton, "Свернуть");
+            this.MinimizeWindowButton.UseVisualStyleBackColor = false;
+            this.MinimizeWindowButton.Click += new System.EventHandler(this.MaximizeMinimizeButton);
             // 
-            // ScaleLabel
+            // MaximizeWindowButton
             // 
-            this.ScaleLabel.AutoSize = true;
-            this.ScaleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScaleLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.ScaleLabel.Location = new System.Drawing.Point(73, 82);
-            this.ScaleLabel.Name = "ScaleLabel";
-            this.ScaleLabel.Size = new System.Drawing.Size(55, 15);
-            this.ScaleLabel.TabIndex = 35;
-            this.ScaleLabel.Text = "Маштаб";
+            this.MaximizeWindowButton.BackColor = System.Drawing.Color.Transparent;
+            this.MaximizeWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaximizeWindowButton.FlatAppearance.BorderSize = 0;
+            this.MaximizeWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.MaximizeWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.MaximizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.MaximizeWindowButton.Location = new System.Drawing.Point(823, 0);
+            this.MaximizeWindowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximizeWindowButton.Name = "MaximizeWindowButton";
+            this.MaximizeWindowButton.Size = new System.Drawing.Size(30, 30);
+            this.MaximizeWindowButton.TabIndex = 1;
+            this.MaximizeWindowButton.Text = "O";
+            //this.toolTip13.SetToolTip(this.MaximizeWindowButton, "Развернуть");
+            this.MaximizeWindowButton.UseVisualStyleBackColor = false;
+            this.MaximizeWindowButton.Click += new System.EventHandler(this.MaximizeMinimizeButton);
             // 
-            // ShowOrPasteLabel
+            // CloseWindowButton
             // 
-            this.ShowOrPasteLabel.AutoSize = true;
-            this.ShowOrPasteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowOrPasteLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.ShowOrPasteLabel.Location = new System.Drawing.Point(207, 82);
-            this.ShowOrPasteLabel.Name = "ShowOrPasteLabel";
-            this.ShowOrPasteLabel.Size = new System.Drawing.Size(117, 13);
-            this.ShowOrPasteLabel.TabIndex = 36;
-            this.ShowOrPasteLabel.Text = "Показать или скрыть";
+            this.CloseWindowButton.BackColor = System.Drawing.Color.Transparent;
+            this.CloseWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CloseWindowButton.FlatAppearance.BorderSize = 0;
+            this.CloseWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(112)))), ((int)(((byte)(122)))));
+            this.CloseWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.CloseWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.CloseWindowButton.Location = new System.Drawing.Point(853, 0);
+            this.CloseWindowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CloseWindowButton.Name = "CloseWindowButton";
+            this.CloseWindowButton.Size = new System.Drawing.Size(30, 30);
+            this.CloseWindowButton.TabIndex = 0;
+            this.CloseWindowButton.Text = "X";
+            //this.toolTip14.SetToolTip(this.CloseWindowButton, "Закрыть");
+            this.CloseWindowButton.UseVisualStyleBackColor = false;
+            this.CloseWindowButton.Click += new System.EventHandler(this.CloseWindowButton_Click);
             // 
-            // SettingsLabel
+            // RedoButton
             // 
-            this.SettingsLabel.AutoSize = true;
-            this.SettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SettingsLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.SettingsLabel.Location = new System.Drawing.Point(370, 82);
-            this.SettingsLabel.Name = "SettingsLabel";
-            this.SettingsLabel.Size = new System.Drawing.Size(76, 15);
-            this.SettingsLabel.TabIndex = 37;
-            this.SettingsLabel.Text = "Параметры";
+            this.RedoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RedoButton.BackColor = System.Drawing.Color.Transparent;
+            this.RedoButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RedoButton.FlatAppearance.BorderSize = 0;
+            this.RedoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.RedoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.RedoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RedoButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.RedoButton.Location = new System.Drawing.Point(60, 0);
+            this.RedoButton.Margin = new System.Windows.Forms.Padding(0);
+            this.RedoButton.Name = "RedoButton";
+            this.RedoButton.Size = new System.Drawing.Size(30, 30);
+            this.RedoButton.TabIndex = 5;
+            this.RedoButton.Text = "↪";
+            //this.RedoToolTip.SetToolTip(this.RedoButton, "Повтор действия.");
+            this.RedoButton.UseVisualStyleBackColor = false;
+            this.RedoButton.Click += new System.EventHandler(this.RedoToolStripMenuItem_Click);
             // 
-            // IcontoolStripButton1
+            // UndoButton
             // 
-            this.IcontoolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.IcontoolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("IcontoolStripButton1.Image")));
-            this.IcontoolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.IcontoolStripButton1.Name = "IcontoolStripButton1";
-            this.IcontoolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.IcontoolStripButton1.Text = "toolStripButton1";
+            this.UndoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UndoButton.BackColor = System.Drawing.Color.Transparent;
+            this.UndoButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UndoButton.FlatAppearance.BorderSize = 0;
+            this.UndoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.UndoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.UndoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UndoButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.UndoButton.Location = new System.Drawing.Point(30, 0);
+            this.UndoButton.Margin = new System.Windows.Forms.Padding(0);
+            this.UndoButton.Name = "UndoButton";
+            this.UndoButton.Size = new System.Drawing.Size(30, 30);
+            this.UndoButton.TabIndex = 6;
+            this.UndoButton.Text = "↩";
+            // this.UndoToolTip.SetToolTip(this.UndoButton, "Отмена действия.");
+            this.UndoButton.UseVisualStyleBackColor = false;
+            this.UndoButton.Click += new System.EventHandler(this.CancelToolStripMenuItem_Click);
             // 
-            // SavetoolStripButton
+            // SaveButton
             // 
-            this.SavetoolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SavetoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SavetoolStripButton.Image")));
-            this.SavetoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.SavetoolStripButton.Name = "SavetoolStripButton";
-            this.SavetoolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.SavetoolStripButton.Text = "toolStripButton2";
+            this.SaveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SaveButton.BackColor = System.Drawing.Color.Transparent;
+            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.SaveButton.Location = new System.Drawing.Point(0, 0);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(30, 30);
+            this.SaveButton.TabIndex = 4;
+            this.SaveButton.Text = "💾";
+            //this.SaveToolTip.SetToolTip(this.SaveButton, "Сохранение активного документа.");
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveMenuButton_Click);
             // 
-            // toolStripSeparator1
+            // panel3
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.ForeColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(4, 30);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(883, 100);
+            this.panel3.TabIndex = 1;
+
+
+
+            // panel5
             // 
-            // UndoToolStripButton
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.panel5.Controls.Add(this.panel1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(4, 130);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
+            this.panel5.Size = new System.Drawing.Size(883, 375);
+            this.panel5.TabIndex = 2;
             // 
-            this.UndoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.UndoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UndoToolStripButton.Image")));
-            this.UndoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.UndoToolStripButton.Name = "UndoToolStripButton";
-            this.UndoToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.UndoToolStripButton.Text = "toolStripButton3";
+            // panel1
             // 
-            // RedoToolStripButton
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.RichTextBoxEditor);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(50, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 0);
+            this.panel1.Size = new System.Drawing.Size(783, 375);
+            this.panel1.TabIndex = 1;
             // 
-            this.RedoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RedoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("RedoToolStripButton.Image")));
-            this.RedoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RedoToolStripButton.Name = "RedoToolStripButton";
-            this.RedoToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.RedoToolStripButton.Text = "toolStripButton4";
+            // RichTextBoxEditor
+            // 
+            this.RichTextBoxEditor.AcceptsTab = true;
+            this.RichTextBoxEditor.BackColor = System.Drawing.Color.White;
+            this.RichTextBoxEditor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RichTextBoxEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RichTextBoxEditor.EnableAutoDragDrop = true;
+            this.RichTextBoxEditor.ForeColor = System.Drawing.Color.Black;
+            this.RichTextBoxEditor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RichTextBoxEditor.Location = new System.Drawing.Point(10, 5);
+            this.RichTextBoxEditor.Margin = new System.Windows.Forms.Padding(0);
+            this.RichTextBoxEditor.Name = "RichTextBoxEditor";
+            this.RichTextBoxEditor.Size = new System.Drawing.Size(763, 370);
+            this.RichTextBoxEditor.TabIndex = 0;
+            this.RichTextBoxEditor.Text = "";
+            //this.UndoToolTip.SetToolTip(this.RichTextBoxEditor, "Отмена последнего действия.");
+            //this.RichTextBoxEditor.SelectionChanged += new System.EventHandler(this.RichTextBoxEditor_SelectionChanged);
+            this.RichTextBoxEditor.TextChanged += new System.EventHandler(this.RichTextBoxEditor_TextChanged);
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
             this.ClientSize = new System.Drawing.Size(983, 450);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.HeaderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = Properties.Resources.Label_name;
             this.Text = "Form1";
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -858,13 +1035,15 @@ namespace Clone_wordpad
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
+            this.HeaderPanel.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -915,11 +1094,20 @@ namespace Clone_wordpad
         private System.Windows.Forms.Label SettingsLabel;
         private System.Windows.Forms.Label ShowOrPasteLabel;
         private System.Windows.Forms.Label ScaleLabel;
-        private System.Windows.Forms.ToolStripButton IcontoolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton SavetoolStripButton;
-        private System.Windows.Forms.ToolStripButton UndoToolStripButton;
-        private System.Windows.Forms.ToolStripButton RedoToolStripButton;
+        private System.Windows.Forms.Panel HeaderPanel;
+        private System.Windows.Forms.Button CloseWindowButton;
+        private System.Windows.Forms.Button MinimizeWindowButton;
+        private System.Windows.Forms.Button MaximizeWindowButton;
+        private System.Windows.Forms.Label FileNameLabel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button UndoButton;
+        private System.Windows.Forms.Button RedoButton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RichTextBox RichTextBoxEditor;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -151,6 +151,15 @@ namespace Clone_wordpad.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Nikolai_WordPad.
+        /// </summary>
+        internal static string Label_name {
+            get {
+                return ResourceManager.GetString("Label_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Left_write {
