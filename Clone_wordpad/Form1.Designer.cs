@@ -30,24 +30,28 @@ namespace Clone_wordpad
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.FileNameLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.MinimizeWindowButton = new System.Windows.Forms.Button();
-            this.MaximizeWindowButton = new System.Windows.Forms.Button();
-            this.CloseWindowButton = new System.Windows.Forms.Button();
             this.RedoButton = new System.Windows.Forms.Button();
             this.UndoButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.MinimizeWindowButton = new System.Windows.Forms.Button();
+            this.MaximizeWindowButton = new System.Windows.Forms.Button();
+            this.CloseWindowButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.RichTextBoxEditor = new System.Windows.Forms.RichTextBox();
-            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBoxStrikeout = new System.Windows.Forms.CheckBox();
+            this.checkBoxUnderline = new System.Windows.Forms.CheckBox();
+            this.checkBoxItalic = new System.Windows.Forms.CheckBox();
+            this.checkBoxBold = new System.Windows.Forms.CheckBox();
             this.EditingLabel = new System.Windows.Forms.Label();
             this.PasteLabel = new System.Windows.Forms.Label();
             this.Parafraphlabel = new System.Windows.Forms.Label();
@@ -55,10 +59,6 @@ namespace Clone_wordpad
             this.ClipboardLabel = new System.Windows.Forms.Label();
             this.FontBackColorbutton = new System.Windows.Forms.Button();
             this.FontColorbutton = new System.Windows.Forms.Button();
-            this.CrossoutOutbutton = new System.Windows.Forms.Button();
-            this.Underlinebutton = new System.Windows.Forms.Button();
-            this.ItalicButton = new System.Windows.Forms.Button();
-            this.Boltbutton = new System.Windows.Forms.Button();
             this.FontSizeComboBox = new System.Windows.Forms.ComboBox();
             this.FontSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -95,13 +95,12 @@ namespace Clone_wordpad
             this.MinusScaleButton = new System.Windows.Forms.Button();
             this.PlusScaleButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -113,12 +112,226 @@ namespace Clone_wordpad
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.Controls.Add(this.panel4);
+            this.HeaderPanel.Controls.Add(this.panel2);
+            this.HeaderPanel.Controls.Add(this.MinimizeWindowButton);
+            this.HeaderPanel.Controls.Add(this.MaximizeWindowButton);
+            this.HeaderPanel.Controls.Add(this.CloseWindowButton);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.Location = new System.Drawing.Point(4, 0);
+            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(975, 30);
+            this.HeaderPanel.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.FileNameLabel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(90, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(795, 30);
+            this.panel4.TabIndex = 4;
+            // 
+            // FileNameLabel
+            // 
+            this.FileNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FileNameLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F);
+            this.FileNameLabel.Location = new System.Drawing.Point(0, 0);
+            this.FileNameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.FileNameLabel.Name = "FileNameLabel";
+            this.FileNameLabel.Size = new System.Drawing.Size(795, 30);
+            this.FileNameLabel.TabIndex = 3;
+            this.FileNameLabel.Text = "Новый документ - Nikolai_WordPad";
+            this.FileNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FileNameLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowDrag);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.Controls.Add(this.RedoButton);
+            this.panel2.Controls.Add(this.UndoButton);
+            this.panel2.Controls.Add(this.SaveButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(90, 30);
+            this.panel2.TabIndex = 7;
+            // 
+            // RedoButton
+            // 
+            this.RedoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RedoButton.BackColor = System.Drawing.Color.Transparent;
+            this.RedoButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RedoButton.FlatAppearance.BorderSize = 0;
+            this.RedoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.RedoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.RedoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RedoButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.RedoButton.ForeColor = System.Drawing.Color.Black;
+            this.RedoButton.Location = new System.Drawing.Point(60, 0);
+            this.RedoButton.Margin = new System.Windows.Forms.Padding(0);
+            this.RedoButton.Name = "RedoButton";
+            this.RedoButton.Size = new System.Drawing.Size(30, 30);
+            this.RedoButton.TabIndex = 5;
+            this.RedoButton.Text = "↪";
+            this.RedoButton.UseVisualStyleBackColor = false;
+            this.RedoButton.Click += new System.EventHandler(this.RedoToolStripMenuItem_Click);
+            // 
+            // UndoButton
+            // 
+            this.UndoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UndoButton.BackColor = System.Drawing.Color.Transparent;
+            this.UndoButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UndoButton.FlatAppearance.BorderSize = 0;
+            this.UndoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.UndoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.UndoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UndoButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.UndoButton.ForeColor = System.Drawing.Color.Black;
+            this.UndoButton.Location = new System.Drawing.Point(30, 0);
+            this.UndoButton.Margin = new System.Windows.Forms.Padding(0);
+            this.UndoButton.Name = "UndoButton";
+            this.UndoButton.Size = new System.Drawing.Size(30, 30);
+            this.UndoButton.TabIndex = 6;
+            this.UndoButton.Text = "↩";
+            this.UndoButton.UseVisualStyleBackColor = false;
+            this.UndoButton.Click += new System.EventHandler(this.CancelToolStripMenuItem_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SaveButton.BackColor = System.Drawing.Color.Transparent;
+            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.SaveButton.ForeColor = System.Drawing.Color.Black;
+            this.SaveButton.Location = new System.Drawing.Point(0, 0);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(30, 30);
+            this.SaveButton.TabIndex = 4;
+            this.SaveButton.Text = "💾";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveMenuButton_Click);
+            // 
+            // MinimizeWindowButton
+            // 
+            this.MinimizeWindowButton.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeWindowButton.FlatAppearance.BorderSize = 0;
+            this.MinimizeWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.MinimizeWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.MinimizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.MinimizeWindowButton.Location = new System.Drawing.Point(885, 0);
+            this.MinimizeWindowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimizeWindowButton.Name = "MinimizeWindowButton";
+            this.MinimizeWindowButton.Size = new System.Drawing.Size(30, 30);
+            this.MinimizeWindowButton.TabIndex = 2;
+            this.MinimizeWindowButton.Text = "_";
+            this.MinimizeWindowButton.UseVisualStyleBackColor = false;
+            this.MinimizeWindowButton.Click += new System.EventHandler(this.MaximizeMinimizeButton);
+            // 
+            // MaximizeWindowButton
+            // 
+            this.MaximizeWindowButton.BackColor = System.Drawing.Color.Transparent;
+            this.MaximizeWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaximizeWindowButton.FlatAppearance.BorderSize = 0;
+            this.MaximizeWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.MaximizeWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.MaximizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.MaximizeWindowButton.Location = new System.Drawing.Point(915, 0);
+            this.MaximizeWindowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximizeWindowButton.Name = "MaximizeWindowButton";
+            this.MaximizeWindowButton.Size = new System.Drawing.Size(30, 30);
+            this.MaximizeWindowButton.TabIndex = 1;
+            this.MaximizeWindowButton.Text = "□";
+            this.MaximizeWindowButton.UseVisualStyleBackColor = false;
+            this.MaximizeWindowButton.Click += new System.EventHandler(this.MaximizeMinimizeButton);
+            // 
+            // CloseWindowButton
+            // 
+            this.CloseWindowButton.BackColor = System.Drawing.Color.Transparent;
+            this.CloseWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CloseWindowButton.FlatAppearance.BorderSize = 0;
+            this.CloseWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(112)))), ((int)(((byte)(122)))));
+            this.CloseWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.CloseWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
+            this.CloseWindowButton.Location = new System.Drawing.Point(945, 0);
+            this.CloseWindowButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CloseWindowButton.Name = "CloseWindowButton";
+            this.CloseWindowButton.Size = new System.Drawing.Size(30, 30);
+            this.CloseWindowButton.TabIndex = 0;
+            this.CloseWindowButton.Text = "X";
+            this.CloseWindowButton.UseVisualStyleBackColor = false;
+            this.CloseWindowButton.Click += new System.EventHandler(this.CloseWindowButton_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.ForeColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(4, 30);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(975, 100);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.RichTextBoxEditor);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(4, 130);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
+            this.panel5.Size = new System.Drawing.Size(975, 436);
+            this.panel5.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(399, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
+            // RichTextBoxEditor
+            // 
+            this.RichTextBoxEditor.AcceptsTab = true;
+            this.RichTextBoxEditor.BackColor = System.Drawing.Color.White;
+            this.RichTextBoxEditor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RichTextBoxEditor.EnableAutoDragDrop = true;
+            this.RichTextBoxEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RichTextBoxEditor.ForeColor = System.Drawing.Color.Black;
+            this.RichTextBoxEditor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RichTextBoxEditor.Location = new System.Drawing.Point(103, 23);
+            this.RichTextBoxEditor.Margin = new System.Windows.Forms.Padding(0);
+            this.RichTextBoxEditor.Name = "RichTextBoxEditor";
+            this.RichTextBoxEditor.Size = new System.Drawing.Size(763, 381);
+            this.RichTextBoxEditor.TabIndex = 0;
+            this.RichTextBoxEditor.Text = "";
+            this.RichTextBoxEditor.SelectionChanged += new System.EventHandler(this.RichTextBoxEditor_SelectionChanged);
+            this.RichTextBoxEditor.TextChanged += new System.EventHandler(this.RichTextBoxEditor_TextChanged);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(0, 28);
+            this.tabControl1.Location = new System.Drawing.Point(4, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 1;
             this.tabControl1.Size = new System.Drawing.Size(983, 126);
@@ -137,6 +350,10 @@ namespace Clone_wordpad
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
+            this.tabPage2.Controls.Add(this.checkBoxStrikeout);
+            this.tabPage2.Controls.Add(this.checkBoxUnderline);
+            this.tabPage2.Controls.Add(this.checkBoxItalic);
+            this.tabPage2.Controls.Add(this.checkBoxBold);
             this.tabPage2.Controls.Add(this.EditingLabel);
             this.tabPage2.Controls.Add(this.PasteLabel);
             this.tabPage2.Controls.Add(this.Parafraphlabel);
@@ -144,10 +361,6 @@ namespace Clone_wordpad
             this.tabPage2.Controls.Add(this.ClipboardLabel);
             this.tabPage2.Controls.Add(this.FontBackColorbutton);
             this.tabPage2.Controls.Add(this.FontColorbutton);
-            this.tabPage2.Controls.Add(this.CrossoutOutbutton);
-            this.tabPage2.Controls.Add(this.Underlinebutton);
-            this.tabPage2.Controls.Add(this.ItalicButton);
-            this.tabPage2.Controls.Add(this.Boltbutton);
             this.tabPage2.Controls.Add(this.FontSizeComboBox);
             this.tabPage2.Controls.Add(this.FontSelectorComboBox);
             this.tabPage2.Controls.Add(this.comboBox1);
@@ -177,6 +390,88 @@ namespace Clone_wordpad
             this.tabPage2.Size = new System.Drawing.Size(975, 100);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Главная";
+            // 
+            // checkBoxStrikeout
+            // 
+            this.checkBoxStrikeout.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxStrikeout.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxStrikeout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBoxStrikeout.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxStrikeout.FlatAppearance.BorderSize = 0;
+            this.checkBoxStrikeout.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.checkBoxStrikeout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.checkBoxStrikeout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxStrikeout.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))));
+            this.checkBoxStrikeout.Location = new System.Drawing.Point(292, 38);
+            this.checkBoxStrikeout.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxStrikeout.Name = "checkBoxStrikeout";
+            this.checkBoxStrikeout.Size = new System.Drawing.Size(40, 26);
+            this.checkBoxStrikeout.TabIndex = 14;
+            this.checkBoxStrikeout.Text = "abc";
+            this.checkBoxStrikeout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxStrikeout.UseVisualStyleBackColor = false;
+            this.checkBoxStrikeout.Click += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
+            // 
+            // checkBoxUnderline
+            // 
+            this.checkBoxUnderline.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxUnderline.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxUnderline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBoxUnderline.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxUnderline.FlatAppearance.BorderSize = 0;
+            this.checkBoxUnderline.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.checkBoxUnderline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.checkBoxUnderline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxUnderline.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.checkBoxUnderline.Location = new System.Drawing.Point(261, 38);
+            this.checkBoxUnderline.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxUnderline.Name = "checkBoxUnderline";
+            this.checkBoxUnderline.Size = new System.Drawing.Size(28, 26);
+            this.checkBoxUnderline.TabIndex = 3;
+            this.checkBoxUnderline.Text = "Ч";
+            this.checkBoxUnderline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxUnderline.UseVisualStyleBackColor = false;
+            this.checkBoxUnderline.Click += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
+            // 
+            // checkBoxItalic
+            // 
+            this.checkBoxItalic.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxItalic.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxItalic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBoxItalic.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxItalic.FlatAppearance.BorderSize = 0;
+            this.checkBoxItalic.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.checkBoxItalic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.checkBoxItalic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxItalic.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.checkBoxItalic.Location = new System.Drawing.Point(229, 38);
+            this.checkBoxItalic.Name = "checkBoxItalic";
+            this.checkBoxItalic.Size = new System.Drawing.Size(28, 26);
+            this.checkBoxItalic.TabIndex = 2;
+            this.checkBoxItalic.Text = "К";
+            this.checkBoxItalic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxItalic.UseVisualStyleBackColor = false;
+            this.checkBoxItalic.Click += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
+            // 
+            // checkBoxBold
+            // 
+            this.checkBoxBold.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxBold.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxBold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBoxBold.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxBold.FlatAppearance.BorderSize = 0;
+            this.checkBoxBold.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.checkBoxBold.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.checkBoxBold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxBold.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Bold);
+            this.checkBoxBold.Location = new System.Drawing.Point(199, 38);
+            this.checkBoxBold.Name = "checkBoxBold";
+            this.checkBoxBold.Size = new System.Drawing.Size(28, 26);
+            this.checkBoxBold.TabIndex = 1;
+            this.checkBoxBold.Text = "Ж";
+            this.checkBoxBold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxBold.UseVisualStyleBackColor = false;
+            this.checkBoxBold.Click += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
             // 
             // EditingLabel
             // 
@@ -238,7 +533,7 @@ namespace Clone_wordpad
             this.FontBackColorbutton.FlatAppearance.BorderSize = 2;
             this.FontBackColorbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FontBackColorbutton.Font = new System.Drawing.Font("Microsoft Himalaya", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FontBackColorbutton.Location = new System.Drawing.Point(362, 38);
+            this.FontBackColorbutton.Location = new System.Drawing.Point(374, 38);
             this.FontBackColorbutton.Margin = new System.Windows.Forms.Padding(0);
             this.FontBackColorbutton.Name = "FontBackColorbutton";
             this.FontBackColorbutton.Size = new System.Drawing.Size(26, 23);
@@ -253,7 +548,7 @@ namespace Clone_wordpad
             this.FontColorbutton.FlatAppearance.BorderSize = 2;
             this.FontColorbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FontColorbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FontColorbutton.Location = new System.Drawing.Point(328, 38);
+            this.FontColorbutton.Location = new System.Drawing.Point(343, 38);
             this.FontColorbutton.Margin = new System.Windows.Forms.Padding(0);
             this.FontColorbutton.Name = "FontColorbutton";
             this.FontColorbutton.Size = new System.Drawing.Size(25, 22);
@@ -262,78 +557,31 @@ namespace Clone_wordpad
             this.FontColorbutton.UseVisualStyleBackColor = true;
             this.FontColorbutton.Click += new System.EventHandler(this.FontColorbutton_Click);
             // 
-            // CrossoutOutbutton
-            // 
-            this.CrossoutOutbutton.BackColor = System.Drawing.Color.Transparent;
-            this.CrossoutOutbutton.FlatAppearance.BorderSize = 0;
-            this.CrossoutOutbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrossoutOutbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CrossoutOutbutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CrossoutOutbutton.Location = new System.Drawing.Point(292, 38);
-            this.CrossoutOutbutton.Name = "CrossoutOutbutton";
-            this.CrossoutOutbutton.Size = new System.Drawing.Size(33, 22);
-            this.CrossoutOutbutton.TabIndex = 9;
-            this.CrossoutOutbutton.Text = "abc";
-            this.CrossoutOutbutton.UseVisualStyleBackColor = true;
-            // 
-            // Underlinebutton
-            // 
-            this.Underlinebutton.BackColor = System.Drawing.Color.Transparent;
-            this.Underlinebutton.FlatAppearance.BorderSize = 0;
-            this.Underlinebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Underlinebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Underlinebutton.Location = new System.Drawing.Point(261, 38);
-            this.Underlinebutton.Name = "Underlinebutton";
-            this.Underlinebutton.Size = new System.Drawing.Size(25, 22);
-            this.Underlinebutton.TabIndex = 8;
-            this.Underlinebutton.Text = "Ч";
-            this.Underlinebutton.UseVisualStyleBackColor = true;
-            // 
-            // ItalicButton
-            // 
-            this.ItalicButton.BackColor = System.Drawing.Color.Transparent;
-            this.ItalicButton.FlatAppearance.BorderSize = 0;
-            this.ItalicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItalicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ItalicButton.Location = new System.Drawing.Point(230, 38);
-            this.ItalicButton.Name = "ItalicButton";
-            this.ItalicButton.Size = new System.Drawing.Size(25, 22);
-            this.ItalicButton.TabIndex = 7;
-            this.ItalicButton.Text = "К";
-            this.ItalicButton.UseVisualStyleBackColor = true;
-            // 
-            // Boltbutton
-            // 
-            this.Boltbutton.BackColor = System.Drawing.Color.Transparent;
-            this.Boltbutton.FlatAppearance.BorderSize = 0;
-            this.Boltbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boltbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Boltbutton.Location = new System.Drawing.Point(199, 38);
-            this.Boltbutton.Name = "Boltbutton";
-            this.Boltbutton.Size = new System.Drawing.Size(25, 22);
-            this.Boltbutton.TabIndex = 6;
-            this.Boltbutton.Text = "Ж";
-            this.Boltbutton.UseVisualStyleBackColor = false;
-            // 
             // FontSizeComboBox
             // 
+            this.FontSizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FontSizeComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FontSizeComboBox.FormattingEnabled = true;
             this.FontSizeComboBox.Location = new System.Drawing.Point(321, 11);
+            this.FontSizeComboBox.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.FontSizeComboBox.Name = "FontSizeComboBox";
-            this.FontSizeComboBox.Size = new System.Drawing.Size(47, 21);
+            this.FontSizeComboBox.Size = new System.Drawing.Size(47, 23);
             this.FontSizeComboBox.TabIndex = 5;
-            this.FontSizeComboBox.Text = "8";
+            this.FontSizeComboBox.SelectionChangeCommitted += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
             // 
             // FontSelectorComboBox
             // 
             this.FontSelectorComboBox.BackColor = System.Drawing.Color.White;
-            this.FontSelectorComboBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.FontSelectorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FontSelectorComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FontSelectorComboBox.ForeColor = System.Drawing.Color.Gray;
             this.FontSelectorComboBox.FormattingEnabled = true;
             this.FontSelectorComboBox.Location = new System.Drawing.Point(199, 11);
+            this.FontSelectorComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.FontSelectorComboBox.Name = "FontSelectorComboBox";
-            this.FontSelectorComboBox.Size = new System.Drawing.Size(121, 21);
-            this.FontSelectorComboBox.TabIndex = 4;
-            this.FontSelectorComboBox.Text = "Calibri";
+            this.FontSelectorComboBox.Size = new System.Drawing.Size(121, 23);
+            this.FontSelectorComboBox.TabIndex = 2;
+            this.FontSelectorComboBox.SelectionChangeCommitted += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -407,6 +655,7 @@ namespace Clone_wordpad
             this.SelectAllButton.Size = new System.Drawing.Size(105, 22);
             this.SelectAllButton.TabIndex = 27;
             this.SelectAllButton.UseVisualStyleBackColor = true;
+            this.SelectAllButton.Click += new System.EventHandler(this.SelectAllButton_Click);
             // 
             // ReplaceButton
             // 
@@ -435,6 +684,7 @@ namespace Clone_wordpad
             this.SearchButton.Size = new System.Drawing.Size(64, 21);
             this.SearchButton.TabIndex = 25;
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // ObjButton
             // 
@@ -519,6 +769,7 @@ namespace Clone_wordpad
             this.RightWtireButton.Size = new System.Drawing.Size(26, 25);
             this.RightWtireButton.TabIndex = 20;
             this.RightWtireButton.UseVisualStyleBackColor = true;
+            this.RightWtireButton.Click += new System.EventHandler(this.RightWtireButton_Click);
             // 
             // CenterWtireButton
             // 
@@ -534,6 +785,7 @@ namespace Clone_wordpad
             this.CenterWtireButton.Size = new System.Drawing.Size(26, 25);
             this.CenterWtireButton.TabIndex = 19;
             this.CenterWtireButton.UseVisualStyleBackColor = true;
+            this.CenterWtireButton.Click += new System.EventHandler(this.CenterWtireButton_Click);
             // 
             // LeftWtireButton
             // 
@@ -564,6 +816,7 @@ namespace Clone_wordpad
             this.button1.Size = new System.Drawing.Size(26, 25);
             this.button1.TabIndex = 17;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // plusFontSizeButton
             // 
@@ -579,6 +832,7 @@ namespace Clone_wordpad
             this.plusFontSizeButton.Size = new System.Drawing.Size(26, 25);
             this.plusFontSizeButton.TabIndex = 16;
             this.plusFontSizeButton.UseVisualStyleBackColor = true;
+            this.plusFontSizeButton.Click += new System.EventHandler(this.plusFontSizeButton_Click);
             // 
             // Copybutton
             // 
@@ -593,6 +847,7 @@ namespace Clone_wordpad
             this.Copybutton.Size = new System.Drawing.Size(97, 23);
             this.Copybutton.TabIndex = 3;
             this.Copybutton.UseVisualStyleBackColor = true;
+            this.Copybutton.Click += new System.EventHandler(this.Copybutton_Click);
             // 
             // Cutbutton
             // 
@@ -622,6 +877,7 @@ namespace Clone_wordpad
             this.Pastebutton.Size = new System.Drawing.Size(71, 55);
             this.Pastebutton.TabIndex = 0;
             this.Pastebutton.UseVisualStyleBackColor = true;
+            this.Pastebutton.Click += new System.EventHandler(this.Pastebutton_Click);
             // 
             // tabPage3
             // 
@@ -786,241 +1042,28 @@ namespace Clone_wordpad
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.HeaderPanel.Controls.Add(this.panel4);
-            this.HeaderPanel.Controls.Add(this.panel2);
-            this.HeaderPanel.Controls.Add(this.MinimizeWindowButton);
-            this.HeaderPanel.Controls.Add(this.MaximizeWindowButton);
-            this.HeaderPanel.Controls.Add(this.CloseWindowButton);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.Location = new System.Drawing.Point(4, 0);
-            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(883, 30);
-            this.HeaderPanel.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.FileNameLabel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(793, 30);
-            this.panel4.TabIndex = 4;
-            // 
-            // FileNameLabel
-            // 
-            this.FileNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FileNameLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F);
-            this.FileNameLabel.Location = new System.Drawing.Point(0, 0);
-            this.FileNameLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.FileNameLabel.Name = "FileNameLabel";
-            this.FileNameLabel.Size = new System.Drawing.Size(793, 30);
-            this.FileNameLabel.TabIndex = 3;
-            this.FileNameLabel.Text = "Новый документ - Nikolai_WordPad";
-            this.FileNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FileNameLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowDrag);
-            // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.Controls.Add(this.RedoButton);
-            this.panel2.Controls.Add(this.UndoButton);
-            this.panel2.Controls.Add(this.SaveButton);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 30);
-            this.panel2.TabIndex = 7;
-            // 
-            // MinimizeWindowButton
-            // 
-            this.MinimizeWindowButton.BackColor = System.Drawing.Color.Transparent;
-            this.MinimizeWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MinimizeWindowButton.FlatAppearance.BorderSize = 0;
-            this.MinimizeWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.MinimizeWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
-            this.MinimizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
-            this.MinimizeWindowButton.Location = new System.Drawing.Point(793, 0);
-            this.MinimizeWindowButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimizeWindowButton.Name = "MinimizeWindowButton";
-            this.MinimizeWindowButton.Size = new System.Drawing.Size(30, 30);
-            this.MinimizeWindowButton.TabIndex = 2;
-            this.MinimizeWindowButton.Text = "_";
-            //this.toolTip12.SetToolTip(this.MinimizeWindowButton, "Свернуть");
-            this.MinimizeWindowButton.UseVisualStyleBackColor = false;
-            this.MinimizeWindowButton.Click += new System.EventHandler(this.MaximizeMinimizeButton);
-            // 
-            // MaximizeWindowButton
-            // 
-            this.MaximizeWindowButton.BackColor = System.Drawing.Color.Transparent;
-            this.MaximizeWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MaximizeWindowButton.FlatAppearance.BorderSize = 0;
-            this.MaximizeWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.MaximizeWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
-            this.MaximizeWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
-            this.MaximizeWindowButton.Location = new System.Drawing.Point(823, 0);
-            this.MaximizeWindowButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximizeWindowButton.Name = "MaximizeWindowButton";
-            this.MaximizeWindowButton.Size = new System.Drawing.Size(30, 30);
-            this.MaximizeWindowButton.TabIndex = 1;
-            this.MaximizeWindowButton.Text = "O";
-            //this.toolTip13.SetToolTip(this.MaximizeWindowButton, "Развернуть");
-            this.MaximizeWindowButton.UseVisualStyleBackColor = false;
-            this.MaximizeWindowButton.Click += new System.EventHandler(this.MaximizeMinimizeButton);
-            // 
-            // CloseWindowButton
-            // 
-            this.CloseWindowButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseWindowButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CloseWindowButton.FlatAppearance.BorderSize = 0;
-            this.CloseWindowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(112)))), ((int)(((byte)(122)))));
-            this.CloseWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.CloseWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseWindowButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
-            this.CloseWindowButton.Location = new System.Drawing.Point(853, 0);
-            this.CloseWindowButton.Margin = new System.Windows.Forms.Padding(0);
-            this.CloseWindowButton.Name = "CloseWindowButton";
-            this.CloseWindowButton.Size = new System.Drawing.Size(30, 30);
-            this.CloseWindowButton.TabIndex = 0;
-            this.CloseWindowButton.Text = "X";
-            //this.toolTip14.SetToolTip(this.CloseWindowButton, "Закрыть");
-            this.CloseWindowButton.UseVisualStyleBackColor = false;
-            this.CloseWindowButton.Click += new System.EventHandler(this.CloseWindowButton_Click);
-            // 
-            // RedoButton
-            // 
-            this.RedoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.RedoButton.BackColor = System.Drawing.Color.Transparent;
-            this.RedoButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RedoButton.FlatAppearance.BorderSize = 0;
-            this.RedoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.RedoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
-            this.RedoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RedoButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
-            this.RedoButton.Location = new System.Drawing.Point(60, 0);
-            this.RedoButton.Margin = new System.Windows.Forms.Padding(0);
-            this.RedoButton.Name = "RedoButton";
-            this.RedoButton.Size = new System.Drawing.Size(30, 30);
-            this.RedoButton.TabIndex = 5;
-            this.RedoButton.Text = "↪";
-            //this.RedoToolTip.SetToolTip(this.RedoButton, "Повтор действия.");
-            this.RedoButton.UseVisualStyleBackColor = false;
-            this.RedoButton.Click += new System.EventHandler(this.RedoToolStripMenuItem_Click);
-            // 
-            // UndoButton
-            // 
-            this.UndoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.UndoButton.BackColor = System.Drawing.Color.Transparent;
-            this.UndoButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.UndoButton.FlatAppearance.BorderSize = 0;
-            this.UndoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.UndoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
-            this.UndoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UndoButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
-            this.UndoButton.Location = new System.Drawing.Point(30, 0);
-            this.UndoButton.Margin = new System.Windows.Forms.Padding(0);
-            this.UndoButton.Name = "UndoButton";
-            this.UndoButton.Size = new System.Drawing.Size(30, 30);
-            this.UndoButton.TabIndex = 6;
-            this.UndoButton.Text = "↩";
-            // this.UndoToolTip.SetToolTip(this.UndoButton, "Отмена действия.");
-            this.UndoButton.UseVisualStyleBackColor = false;
-            this.UndoButton.Click += new System.EventHandler(this.CancelToolStripMenuItem_Click);
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SaveButton.BackColor = System.Drawing.Color.Transparent;
-            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SaveButton.FlatAppearance.BorderSize = 0;
-            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
-            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F);
-            this.SaveButton.Location = new System.Drawing.Point(0, 0);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(30, 30);
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.Text = "💾";
-            //this.SaveToolTip.SetToolTip(this.SaveButton, "Сохранение активного документа.");
-            this.SaveButton.UseVisualStyleBackColor = false;
-            this.SaveButton.Click += new System.EventHandler(this.SaveMenuButton_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(4, 30);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(883, 100);
-            this.panel3.TabIndex = 1;
-
-
-
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panel5.Controls.Add(this.panel1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(4, 130);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
-            this.panel5.Size = new System.Drawing.Size(883, 375);
-            this.panel5.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.RichTextBoxEditor);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(50, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(783, 375);
-            this.panel1.TabIndex = 1;
-            // 
-            // RichTextBoxEditor
-            // 
-            this.RichTextBoxEditor.AcceptsTab = true;
-            this.RichTextBoxEditor.BackColor = System.Drawing.Color.White;
-            this.RichTextBoxEditor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextBoxEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RichTextBoxEditor.EnableAutoDragDrop = true;
-            this.RichTextBoxEditor.ForeColor = System.Drawing.Color.Black;
-            this.RichTextBoxEditor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RichTextBoxEditor.Location = new System.Drawing.Point(10, 5);
-            this.RichTextBoxEditor.Margin = new System.Windows.Forms.Padding(0);
-            this.RichTextBoxEditor.Name = "RichTextBoxEditor";
-            this.RichTextBoxEditor.Size = new System.Drawing.Size(763, 370);
-            this.RichTextBoxEditor.TabIndex = 0;
-            this.RichTextBoxEditor.Text = "";
-            //this.UndoToolTip.SetToolTip(this.RichTextBoxEditor, "Отмена последнего действия.");
-            //this.RichTextBoxEditor.SelectionChanged += new System.EventHandler(this.RichTextBoxEditor_SelectionChanged);
-            this.RichTextBoxEditor.TextChanged += new System.EventHandler(this.RichTextBoxEditor_TextChanged);
-
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-            this.ClientSize = new System.Drawing.Size(983, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(983, 570);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.HeaderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = Properties.Resources.Label_name;
+            this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.HeaderPanel.ResumeLayout(false);
+            this.HeaderPanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -1034,11 +1077,6 @@ namespace Clone_wordpad
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.ResumeLayout(false);
-            this.HeaderPanel.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1055,10 +1093,6 @@ namespace Clone_wordpad
         private System.Windows.Forms.Button Cutbutton;
         private System.Windows.Forms.ComboBox FontSelectorComboBox;
         private System.Windows.Forms.ComboBox FontSizeComboBox;
-        private System.Windows.Forms.Button CrossoutOutbutton;
-        private System.Windows.Forms.Button Underlinebutton;
-        private System.Windows.Forms.Button ItalicButton;
-        private System.Windows.Forms.Button Boltbutton;
         private System.Windows.Forms.Button FontColorbutton;
         private System.Windows.Forms.Button FontBackColorbutton;
         private System.Windows.Forms.Button plusFontSizeButton;
@@ -1107,7 +1141,11 @@ namespace Clone_wordpad
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RichTextBox RichTextBoxEditor;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxBold;
+        private System.Windows.Forms.CheckBox checkBoxItalic;
+        private System.Windows.Forms.CheckBox checkBoxUnderline;
+        private System.Windows.Forms.CheckBox checkBoxStrikeout;
     }
 }
 

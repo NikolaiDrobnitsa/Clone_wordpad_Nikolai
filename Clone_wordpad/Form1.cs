@@ -15,8 +15,8 @@ namespace Clone_wordpad
 {
     public partial class Form1 : Form
     {
-        public string OpenedDocumentPath { get; set; } = "Новый документ"; //Путь к открытому документу
-        public bool IsOpened { get; set; } = false; //Если false, то при нажатии на сохранить затребовать путь к файлу
+        public string OpenedDocumentPath { get; set; } = "Новый документ"; -
+        public bool IsOpened { get; set; } = false; -
         List<string> _FontsName = new List<string>();
         List<float> _FontSize = new List<float>();
         public string DefaultSaveDirectory { get; set; } = "c:\\";
@@ -38,6 +38,25 @@ namespace Clone_wordpad
             InitializeComponent();
             InitializeFonts();
         }
+        private void InitializeFonts()
+        {
+            FontFamily[] fontList = new System.Drawing.Text.InstalledFontCollection().Families;
+            foreach (var item in fontList)
+                _FontsName.Add(item.Name);
+
+            FontSelectorComboBox.DataSource = _FontsName;
+            FontSelectorComboBox.SelectedIndex = 10;
+            for (int i = 1; i < 50; i++)
+                _FontSize.Add(i);
+            FontSizeComboBox.DataSource = _FontSize;
+            FontSizeComboBox.SelectedIndex = 10;
+            //FontSizeComboBox.SelectedValue = 1;
+
+        }
+        private int GetFontIndex(string name)
+        {
+            return _FontsName.IndexOf(name);
+        }
         private void RichTextBoxEditor_TextChanged(object sender, EventArgs e)
         {
             IsUnsaved = true;
@@ -48,19 +67,37 @@ namespace Clone_wordpad
             if (buttonText == "_") WindowState = FormWindowState.Minimized;
             else WindowState = WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
         }
+
+        //menu
+        ////private void ForeColorPickerMenuItem_Click(object sender, EventArgs e)
+        ////{
+        ////    using (ColorDialog colorDialog = new ColorDialog())
+        ////    {
+        ////        if (colorDialog.ShowDialog() == DialogResult.OK)
+        ////            ForeColor = colorDialog.Color;
+        ////    }
+        ////}
+        ////private void BackColorPickerMenuItem_Click(object sender, EventArgs e)
+        ////{
+        ////    using (ColorDialog colorDialog = new ColorDialog())
+        ////    {
+        ////        if (colorDialog.ShowDialog() == DialogResult.OK)
+        ////            BackColor = colorDialog.Color;
+        ////    }
+        ////}
         private void SaveMenuButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if (IsOpened) //Если файл уже был открыт, просто сохранить по пути (проверив существование директории)
+                if (IsOpened) 
                 {
                     var dirPath = OpenedDocumentPath.Substring(0, OpenedDocumentPath.LastIndexOf(Path.DirectorySeparatorChar) + 1);
-                    Directory.CreateDirectory(dirPath); //Если каталог не существует - создать
+                    Directory.CreateDirectory(dirPath); 
 
                     RichTextBoxEditor.SaveFile(OpenedDocumentPath,
-                        OpenedDocumentPath.EndsWith(".rtf") ? RichTextBoxStreamType.RichText : RichTextBoxStreamType.PlainText); //Если .rtf, сохранить с форматированием
+                        OpenedDocumentPath.EndsWith(".rtf") ? RichTextBoxStreamType.RichText : RichTextBoxStreamType.PlainText); 
                 }
-                else //Файл новый, значит вызвать диалог для сохранения
+                else 
                 {
                     using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                     {
@@ -72,10 +109,10 @@ namespace Clone_wordpad
                         if (saveFileDialog.ShowDialog() == DialogResult.OK)
                         {
                             var dirPath = saveFileDialog.FileName.Substring(0, saveFileDialog.FileName.LastIndexOf(Path.DirectorySeparatorChar) + 1);
-                            Directory.CreateDirectory(dirPath); //Если каталог не существует - создать
+                            Directory.CreateDirectory(dirPath); 
 
                             RichTextBoxEditor.SaveFile(saveFileDialog.FileName,
-                                saveFileDialog.FileName.EndsWith(".rtf") ? RichTextBoxStreamType.RichText : RichTextBoxStreamType.PlainText); //Если .rtf, сохранить с форматированием
+                                saveFileDialog.FileName.EndsWith(".rtf") ? RichTextBoxStreamType.RichText : RichTextBoxStreamType.PlainText); 
 
                             OpenedDocumentPath = saveFileDialog.FileName;
                             IsOpened = true;
@@ -95,14 +132,14 @@ namespace Clone_wordpad
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); //Вызывает API Windows для захвата окна
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
             }
         }
         private void CloseWindowButton_Click(object sender, EventArgs e)
         {
             if (IsUnsaved)
             {
-                DialogResult savePrompt = MessageBox.Show("Вы хотите сохранить ваши изменения?", "MiniWordPad", MessageBoxButtons.YesNoCancel);
+                DialogResult savePrompt = MessageBox.Show("Вы хотите сохранить ваши изменения?", "Nikolai_WordPad", MessageBoxButtons.YesNoCancel);
 
                 switch (savePrompt)
                 {
@@ -183,34 +220,143 @@ namespace Clone_wordpad
         #endregion
         private void UpdatePath()
         {
-            FileNameLabel.Text = $"{(IsUnsaved ? "*" : "")}{OpenedDocumentPath} - MiniWordPad";
+            FileNameLabel.Text = $"{(IsUnsaved ? "*" : "")}{OpenedDocumentPath} - Nikolai_WordPad";
         }
-        private int GetFontIndex(string name)
+        private void RichTextBoxEditor_SelectionChanged(object sender, EventArgs e)
         {
-            return _FontsName.IndexOf(name);
+            if (RichTextBoxEditor.SelectionFont != null)
+            {
+                checkBoxBold.Checked = RichTextBoxEditor.SelectionFont.Bold;
+                checkBoxItalic.Checked = RichTextBoxEditor.SelectionFont.Italic;
+                checkBoxUnderline.Checked = RichTextBoxEditor.SelectionFont.Underline;
+                checkBoxStrikeout.Checked = RichTextBoxEditor.SelectionFont.Strikeout;
+
+                FontSelectorComboBox.SelectedIndex = GetFontIndex(RichTextBoxEditor.SelectionFont.FontFamily.Name);
+                FontSizeComboBox.SelectedItem = RichTextBoxEditor.SelectionFont.Size;
+
+                FontColorbutton.FlatAppearance.BorderColor = RichTextBoxEditor.SelectionColor;
+                FontBackColorbutton.FlatAppearance.BorderColor = RichTextBoxEditor.SelectionBackColor;
+
+            }
+
         }
+        
+        
+
+        private void CenterWtireButton_Click(object sender, EventArgs e)
+        {
+            RichTextBoxEditor.SelectionAlignment = HorizontalAlignment.Center;
+            CenterWtireButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            LeftWtireButton.BackColor = System.Drawing.Color.Transparent;
+            RightWtireButton.BackColor = System.Drawing.Color.Transparent;
+            RichTextBoxEditor.Focus();
+        }
+
+        private void RightWtireButton_Click(object sender, EventArgs e)
+        {
+
+            RichTextBoxEditor.SelectionAlignment = HorizontalAlignment.Right;
+            RightWtireButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            LeftWtireButton.BackColor = System.Drawing.Color.Transparent;
+            CenterWtireButton.BackColor = System.Drawing.Color.Transparent;
+            RichTextBoxEditor.Focus();
+        }
+
+        private void Pastebutton_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
+                RichTextBoxEditor.Paste();
+        }
+
+        private void Copybutton_Click(object sender, EventArgs e)
+        {
+            if (RichTextBoxEditor.SelectionLength > 0)
+                RichTextBoxEditor.Copy();
+        }
+
+        private void SelectAllButton_Click(object sender, EventArgs e)
+        {
+            RichTextBoxEditor.SelectAll();
+            RichTextBoxEditor.SelectionStart = 0;
+            RichTextBoxEditor.SelectionLength = RichTextBoxEditor.Text.Length;
+            RichTextBoxEditor.Focus();
+        }
+
+        private void FontSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RichTextBoxEditor.SelectionFont = new Font
+             (
+                 FontSelectorComboBox.SelectedItem.ToString(),
+                 (float)FontSizeComboBox.SelectedItem,
+                 (
+                     (checkBoxBold.Checked ? FontStyle.Bold : 0) |
+                     (checkBoxItalic.Checked ? FontStyle.Italic : 0) |
+                     (checkBoxUnderline.Checked ? FontStyle.Underline : 0) |
+                     (checkBoxStrikeout.Checked ? FontStyle.Strikeout : 0)
+                 )
+             );
+
+        }
+
+        private void plusFontSizeButton_Click(object sender, EventArgs e)
+        {
+            int number = Int32.Parse(FontSizeComboBox.SelectedItem.ToString());
+            int Size_value = ++number;
+            string myString = Size_value.ToString();
+            
+            FontSizeComboBox.Text = myString;
+            label1.Text = FontSizeComboBox.SelectedItem.ToString();
+            FontSelectorComboBox_SelectedIndexChanged(sender,e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int number = Int32.Parse(FontSizeComboBox.SelectedItem.ToString());
+            int Size_value = --number;
+            string myString = Size_value.ToString();
+
+            FontSizeComboBox.Text = myString;
+            label1.Text = FontSizeComboBox.SelectedItem.ToString();
+            FontSelectorComboBox_SelectedIndexChanged(sender, e);
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Boltbutton_Click(object sender, EventArgs e)
+        {
+            bool check_press_bolt = false;
+            if (check_press_bolt == false)
+            {
+                
+            }
+        }
+
+        
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            tabControl1.Size = new Size(this.Width, 126);
+            //moveTextBox = this.Size.Width;
+            //moveTextBox -= moveTextBox2;
+            //moveTextBox = this.RichTextBoxEditor.Location.X;
+            //moveTextBox = moveTextBox - this.Size.Width;
+            
+            
+                
+            
+            //label1.Text = this.Size.Width.ToString();
+            tabControl1.Size = new Size(this.Width-8, 126);
+            this.RichTextBoxEditor.Size = new System.Drawing.Size(763, this.Size.Height);
+            //this.RichTextBoxEditor.Location = new System.Drawing.Point(103 + this.Location.X, 23);
+            this.RichTextBoxEditor.Location = new System.Drawing.Point(103 , 23);
         }
-        private void InitializeFonts()
-        {
-            FontFamily[] fontList = new System.Drawing.Text.InstalledFontCollection().Families;
-            foreach (var item in fontList)
-                _FontsName.Add(item.Name);
-
-            FontSelectorComboBox.DataSource = _FontsName;
-            FontSelectorComboBox.SelectedIndex = 10;
-            for (int i = 1; i < 50; i++)
-                _FontSize.Add(i);
-            FontSizeComboBox.DataSource = _FontSize;
-            FontSizeComboBox.SelectedIndex = 10;
-
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (RichTextBoxEditor.SelectionLength > 0)
+                RichTextBoxEditor.Cut();
         }
 
         private void FontColorbutton_Click(object sender, EventArgs e)
@@ -219,7 +365,7 @@ namespace Clone_wordpad
             {
                 if (colorDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //RichTextBoxEditor.SelectionColor = colorDialog.Color;
+                    RichTextBoxEditor.SelectionColor = colorDialog.Color;
                     FontColorbutton.FlatAppearance.BorderColor = colorDialog.Color;
                 }
             }
@@ -231,7 +377,7 @@ namespace Clone_wordpad
             {
                 if (colorDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //RichTextBoxEditor.SelectionBackColor = colorDialog.Color;
+                    RichTextBoxEditor.SelectionBackColor = colorDialog.Color;
                     FontBackColorbutton.FlatAppearance.BorderColor = colorDialog.Color;
                 }
             }
@@ -240,6 +386,10 @@ namespace Clone_wordpad
         private void LeftWtireButton_Click(object sender, EventArgs e)
         {
             LeftWtireButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            RichTextBoxEditor.SelectionAlignment = HorizontalAlignment.Left;
+            RightWtireButton.BackColor = System.Drawing.Color.Transparent;
+            CenterWtireButton.BackColor = System.Drawing.Color.Transparent;
+            RichTextBoxEditor.Focus();
         }
 
         private void button4_Click(object sender, EventArgs e)
