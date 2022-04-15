@@ -947,12 +947,15 @@ namespace Clone_wordpad
             // WordWrapCheckBox
             // 
             this.WordWrapCheckBox.AutoSize = true;
+            this.WordWrapCheckBox.Checked = true;
+            this.WordWrapCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.WordWrapCheckBox.Location = new System.Drawing.Point(349, 14);
             this.WordWrapCheckBox.Name = "WordWrapCheckBox";
             this.WordWrapCheckBox.Size = new System.Drawing.Size(126, 17);
             this.WordWrapCheckBox.TabIndex = 32;
             this.WordWrapCheckBox.Text = "Перенос по словам";
             this.WordWrapCheckBox.UseVisualStyleBackColor = true;
+            this.WordWrapCheckBox.CheckedChanged += new System.EventHandler(this.WordWrapCheckBox_CheckedChanged);
             // 
             // pictureBox7
             // 

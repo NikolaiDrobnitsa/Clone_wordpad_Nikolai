@@ -15,8 +15,8 @@ namespace Clone_wordpad
 {
     public partial class Form1 : Form
     {
-        public string OpenedDocumentPath { get; set; } = "Новый документ"; -
-        public bool IsOpened { get; set; } = false; -
+        public string OpenedDocumentPath { get; set; } = "Новый документ"; 
+        public bool IsOpened { get; set; } = false; 
         List<string> _FontsName = new List<string>();
         List<float> _FontSize = new List<float>();
         public string DefaultSaveDirectory { get; set; } = "c:\\";
@@ -60,6 +60,11 @@ namespace Clone_wordpad
         private void RichTextBoxEditor_TextChanged(object sender, EventArgs e)
         {
             IsUnsaved = true;
+            if (WordWrapCheckBox.Checked == false)
+            {
+                RichTextBoxEditor.Focus();
+            }
+           
         }
         private void MaximizeMinimizeButton(object sender, EventArgs e)
         {
@@ -320,11 +325,46 @@ namespace Clone_wordpad
             FontSelectorComboBox_SelectedIndexChanged(sender, e);
         }
 
+        Form2 Search = new Form2();
+        
         private void SearchButton_Click(object sender, EventArgs e)
         {
 
+            Search.ShowDialog();
+
         }
 
+        private void WordWrapCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WordWrapCheckBox.Checked == true)
+            {
+                RichTextBoxEditor.WordWrap = true;
+            }
+            else
+            {
+                RichTextBoxEditor.WordWrap = false;
+            }
+        }
+
+        //public void Procces_Search()
+        //{
+        //    int start = 0;
+        //    int end = RichTextBoxEditor.Text.IndexOf(Search.ReturnData());
+
+        //    label1.Text = Search.ReturnData();
+
+        //    RichTextBoxEditor.SelectAll();
+        //    RichTextBoxEditor.SelectionBackColor = Color.White;
+
+        //    while (start < end)
+        //    {
+        //        RichTextBoxEditor.Find(Search.ReturnData(), start, RichTextBoxEditor.TextLength, RichTextBoxFinds.MatchCase);
+
+        //        RichTextBoxEditor.SelectionBackColor = Color.Yellow;
+
+        //        start = RichTextBoxEditor.Text.IndexOf(Search.ReturnData(), start) + 1;
+        //    }
+        //}
         private void Boltbutton_Click(object sender, EventArgs e)
         {
             bool check_press_bolt = false;
@@ -394,6 +434,9 @@ namespace Clone_wordpad
 
         private void button4_Click(object sender, EventArgs e)
         {
+            RichTextBoxEditor.SelectionLength = 0;
+            RichTextBoxEditor.SelectedText = DateTime.Now.ToString();
+
 
         }
 
