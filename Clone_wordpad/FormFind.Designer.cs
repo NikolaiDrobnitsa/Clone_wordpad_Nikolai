@@ -1,7 +1,7 @@
 ﻿
 namespace Clone_wordpad
 {
-    partial class Form2
+    partial class FormFind
     {
         /// <summary>
         /// Required designer variable.
@@ -33,56 +33,68 @@ namespace Clone_wordpad
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(226, 53);
+            this.button2.Location = new System.Drawing.Point(226, 49);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Отмена";
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Очистить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(226, 24);
+            this.button1.Location = new System.Drawing.Point(226, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Найти похожие";
             this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 24);
+            this.textBox1.Location = new System.Drawing.Point(45, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 5;
-            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 24);
+            this.label1.Location = new System.Drawing.Point(10, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Что:";
             // 
-            // Form2
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(226, 78);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Отмена";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // FormFind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 112);
+            this.ClientSize = new System.Drawing.Size(330, 114);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form2";
-            this.Text = "Найти";
+            this.Name = "FormFind";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "FormFind";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,5 +106,6 @@ namespace Clone_wordpad
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -64,7 +64,33 @@ namespace Clone_wordpad
             {
                 RichTextBoxEditor.Focus();
             }
-           
+            //if (RichTextBoxEditor.SelectionLength != RichTextBoxEditor.Text.Length)
+            //{
+            //    Copybutton.BackgroundImage = Clone_wordpad.Properties.Resources.copy;
+            //    MessageBox.Show("Test");
+            //}
+            //else
+            //{
+            //    Copybutton.BackgroundImage = Clone_wordpad.Properties.Resources.copy_disable;
+
+            //}
+            if (RichTextBoxEditor.Text != "")
+            {
+                Copybutton.BackgroundImage = Clone_wordpad.Properties.Resources.copy;
+                Copybutton.Enabled = true;
+                Cutbutton.BackgroundImage = Clone_wordpad.Properties.Resources.Cut;
+                Cutbutton.Enabled = true;
+
+
+            }
+            else
+            {
+                Copybutton.BackgroundImage = Clone_wordpad.Properties.Resources.copy_disable;
+                Copybutton.Enabled = false;
+                Cutbutton.BackgroundImage = Clone_wordpad.Properties.Resources.cut_disable;
+                Cutbutton.Enabled = false;
+            }
+            
         }
         private void MaximizeMinimizeButton(object sender, EventArgs e)
         {
@@ -243,7 +269,6 @@ namespace Clone_wordpad
                 FontBackColorbutton.FlatAppearance.BorderColor = RichTextBoxEditor.SelectionBackColor;
 
             }
-
         }
         
         
@@ -310,7 +335,6 @@ namespace Clone_wordpad
             string myString = Size_value.ToString();
             
             FontSizeComboBox.Text = myString;
-            label1.Text = FontSizeComboBox.SelectedItem.ToString();
             FontSelectorComboBox_SelectedIndexChanged(sender,e);
         }
 
@@ -321,17 +345,16 @@ namespace Clone_wordpad
             string myString = Size_value.ToString();
 
             FontSizeComboBox.Text = myString;
-            label1.Text = FontSizeComboBox.SelectedItem.ToString();
             FontSelectorComboBox_SelectedIndexChanged(sender, e);
         }
 
-        Form2 Search = new Form2();
+        
         
         private void SearchButton_Click(object sender, EventArgs e)
         {
-
-            Search.ShowDialog();
-
+            FormFind fFind = new FormFind();
+            fFind.Owner = this;
+            fFind.Show();
         }
 
         private void WordWrapCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -346,25 +369,122 @@ namespace Clone_wordpad
             }
         }
 
-        //public void Procces_Search()
-        //{
-        //    int start = 0;
-        //    int end = RichTextBoxEditor.Text.IndexOf(Search.ReturnData());
+        private void ReplaceButton_Click(object sender, EventArgs e)
+        {
+            FormReplace fReplace = new FormReplace();
+            fReplace.Owner = this;
+            fReplace.Show();
+        }
 
-        //    label1.Text = Search.ReturnData();
+        private void RichTextBoxEditor_SizeChanged(object sender, EventArgs e)
+        {
+            RichTextBoxEditor.ScrollToCaret();
+            RichTextBoxEditor.Focus();
+        }
+        float Scale_richtextbox = 1;
+        private void PlusScaleButton_Click(object sender, EventArgs e)
+        {
+            //RichTextBoxEditor.Scale(SizeF );
+            RichTextBoxEditor.ZoomFactor = ++Scale_richtextbox;
+        }
 
-        //    RichTextBoxEditor.SelectAll();
-        //    RichTextBoxEditor.SelectionBackColor = Color.White;
+        private void img_button_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Images |*.bmp;*.jpg;*.png;*.gif;*.ico" })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    Clipboard.SetImage(Image.FromFile(ofd.FileName));
+                    RichTextBoxEditor.Paste();
+                    Clipboard.Clear();
+                }
+            }
+        }
 
-        //    while (start < end)
-        //    {
-        //        RichTextBoxEditor.Find(Search.ReturnData(), start, RichTextBoxEditor.TextLength, RichTextBoxFinds.MatchCase);
+        private void MinusScaleButton_Click(object sender, EventArgs e)
+        {
+            if (Scale_richtextbox > 1)
+            {
+                RichTextBoxEditor.ZoomFactor = --Scale_richtextbox;
+            }
 
-        //        RichTextBoxEditor.SelectionBackColor = Color.Yellow;
+        }
 
-        //        start = RichTextBoxEditor.Text.IndexOf(Search.ReturnData(), start) + 1;
-        //    }
-        //}
+        private void Default_Scale_Click(object sender, EventArgs e)
+        {
+            Scale_richtextbox = 1;
+            RichTextBoxEditor.ZoomFactor = Scale_richtextbox;
+        }
+
+        private void StatusBarCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (StatusBarCheckBox.Checked == true)
+            {
+                statusStrip1.Visible = true;
+            }
+            else
+            {
+                statusStrip1.Visible = false;
+            }
+        }
+
+        private void ObjButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = DefaultSaveDirectory;
+                openFileDialog.Filter = "Документы (*.rtf;*.pdf;*.txt)|*.rtf;*.pdf;*.txt|Все файлы (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK &&
+                    openFileDialog.FileName.Length > 0)
+                {
+                    OpenedDocumentPath = openFileDialog.FileName;
+                    IsOpened = true; //Файл теперь открыт
+                    UpdatePath();
+
+                    try
+                    {
+                        if (OpenedDocumentPath.EndsWith(".rtf")) //Открытие RTF файлов
+                        {
+                            RichTextBoxEditor.LoadFile(OpenedDocumentPath);
+                        }
+                        else if (OpenedDocumentPath.EndsWith(".pdf")) //Обработка PDF файлов
+                        {
+                            //TODO: 
+                            //Добавить чтение PDF файлов
+                            MessageBox.Show("PDF Временно не поддерживается!");
+
+                            //Создать новый файл чтобы не возникало ошибок
+                            IsOpened = false;
+                            RichTextBoxEditor.Text = String.Empty;
+                            OpenedDocumentPath = "Новый документ";
+                            IsUnsaved = false;
+                            UpdatePath();
+                        }
+                        else //Любой другой файл просто открыть в текстовом режиме
+                        {
+                            var fileStream = openFileDialog.OpenFile();
+                            using (StreamReader reader = new StreamReader(fileStream))
+                            {
+                                RichTextBoxEditor.Text = reader.ReadToEnd();
+                            }
+                        }
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show("Не удалось открыть файл. Возможно он занят другим процессом.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void PaintButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\Windows\\System32\\mspaint.exe");
+        }
+
         private void Boltbutton_Click(object sender, EventArgs e)
         {
             bool check_press_bolt = false;
@@ -386,8 +506,8 @@ namespace Clone_wordpad
                 
             
             //label1.Text = this.Size.Width.ToString();
-            tabControl1.Size = new Size(this.Width-8, 126);
-            this.RichTextBoxEditor.Size = new System.Drawing.Size(763, this.Size.Height);
+            tabControl1.Size = new Size(this.Width - 8, 126);
+            this.RichTextBoxEditor.Size = new System.Drawing.Size(763, this.Size.Height - 180);
             //this.RichTextBoxEditor.Location = new System.Drawing.Point(103 + this.Location.X, 23);
             this.RichTextBoxEditor.Location = new System.Drawing.Point(103 , 23);
         }

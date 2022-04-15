@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
 namespace Clone_wordpad
 {
     partial class Form1
@@ -43,7 +45,6 @@ namespace Clone_wordpad
             this.CloseWindowButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.RichTextBoxEditor = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -95,6 +96,7 @@ namespace Clone_wordpad
             this.MinusScaleButton = new System.Windows.Forms.Button();
             this.PlusScaleButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.HeaderPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -290,7 +292,6 @@ namespace Clone_wordpad
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.RichTextBoxEditor);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(4, 130);
@@ -298,15 +299,6 @@ namespace Clone_wordpad
             this.panel5.Padding = new System.Windows.Forms.Padding(50, 0, 50, 0);
             this.panel5.Size = new System.Drawing.Size(975, 436);
             this.panel5.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(399, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
             // 
             // RichTextBoxEditor
             // 
@@ -317,13 +309,14 @@ namespace Clone_wordpad
             this.RichTextBoxEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RichTextBoxEditor.ForeColor = System.Drawing.Color.Black;
             this.RichTextBoxEditor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RichTextBoxEditor.Location = new System.Drawing.Point(103, 23);
+            this.RichTextBoxEditor.Location = new System.Drawing.Point(93, 23);
             this.RichTextBoxEditor.Margin = new System.Windows.Forms.Padding(0);
             this.RichTextBoxEditor.Name = "RichTextBoxEditor";
             this.RichTextBoxEditor.Size = new System.Drawing.Size(763, 381);
             this.RichTextBoxEditor.TabIndex = 0;
             this.RichTextBoxEditor.Text = "";
             this.RichTextBoxEditor.SelectionChanged += new System.EventHandler(this.RichTextBoxEditor_SelectionChanged);
+            this.RichTextBoxEditor.SizeChanged += new System.EventHandler(this.RichTextBoxEditor_SizeChanged);
             this.RichTextBoxEditor.TextChanged += new System.EventHandler(this.RichTextBoxEditor_TextChanged);
             // 
             // tabControl1
@@ -644,6 +637,7 @@ namespace Clone_wordpad
             // 
             // SelectAllButton
             // 
+            this.SelectAllButton.BackColor = System.Drawing.Color.Transparent;
             this.SelectAllButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.SelectAllButton.FlatAppearance.BorderSize = 0;
             this.SelectAllButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
@@ -654,11 +648,12 @@ namespace Clone_wordpad
             this.SelectAllButton.Name = "SelectAllButton";
             this.SelectAllButton.Size = new System.Drawing.Size(105, 22);
             this.SelectAllButton.TabIndex = 27;
-            this.SelectAllButton.UseVisualStyleBackColor = true;
+            this.SelectAllButton.UseVisualStyleBackColor = false;
             this.SelectAllButton.Click += new System.EventHandler(this.SelectAllButton_Click);
             // 
             // ReplaceButton
             // 
+            this.ReplaceButton.BackColor = System.Drawing.Color.Transparent;
             this.ReplaceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ReplaceButton.FlatAppearance.BorderSize = 0;
             this.ReplaceButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
@@ -669,10 +664,13 @@ namespace Clone_wordpad
             this.ReplaceButton.Name = "ReplaceButton";
             this.ReplaceButton.Size = new System.Drawing.Size(72, 22);
             this.ReplaceButton.TabIndex = 26;
-            this.ReplaceButton.UseVisualStyleBackColor = true;
+            this.ReplaceButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ReplaceButton.UseVisualStyleBackColor = false;
+            this.ReplaceButton.Click += new System.EventHandler(this.ReplaceButton_Click);
             // 
             // SearchButton
             // 
+            this.SearchButton.BackColor = System.Drawing.Color.Transparent;
             this.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.SearchButton.FlatAppearance.BorderSize = 0;
             this.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
@@ -683,7 +681,7 @@ namespace Clone_wordpad
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(64, 21);
             this.SearchButton.TabIndex = 25;
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // ObjButton
@@ -702,6 +700,7 @@ namespace Clone_wordpad
             this.ObjButton.Text = "Обьект";
             this.ObjButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ObjButton.UseVisualStyleBackColor = true;
+            this.ObjButton.Click += new System.EventHandler(this.ObjButton_Click);
             // 
             // TimeButton
             // 
@@ -737,6 +736,7 @@ namespace Clone_wordpad
             this.PaintButton.Text = "Рисунок\nPaint";
             this.PaintButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PaintButton.UseVisualStyleBackColor = true;
+            this.PaintButton.Click += new System.EventHandler(this.PaintButton_Click);
             // 
             // img_button
             // 
@@ -754,6 +754,7 @@ namespace Clone_wordpad
             this.img_button.Text = "Изображение";
             this.img_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.img_button.UseVisualStyleBackColor = true;
+            this.img_button.Click += new System.EventHandler(this.img_button_Click);
             // 
             // RightWtireButton
             // 
@@ -836,7 +837,7 @@ namespace Clone_wordpad
             // 
             // Copybutton
             // 
-            this.Copybutton.BackgroundImage = global::Clone_wordpad.Properties.Resources.copy;
+            this.Copybutton.BackgroundImage = global::Clone_wordpad.Properties.Resources.copy_disable;
             this.Copybutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Copybutton.FlatAppearance.BorderSize = 0;
             this.Copybutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
@@ -851,7 +852,7 @@ namespace Clone_wordpad
             // 
             // Cutbutton
             // 
-            this.Cutbutton.BackgroundImage = global::Clone_wordpad.Properties.Resources.Cut;
+            this.Cutbutton.BackgroundImage = global::Clone_wordpad.Properties.Resources.cut_disable;
             this.Cutbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Cutbutton.FlatAppearance.BorderSize = 0;
             this.Cutbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
@@ -976,6 +977,7 @@ namespace Clone_wordpad
             this.StatusBarCheckBox.TabIndex = 30;
             this.StatusBarCheckBox.Text = "Строка состояния";
             this.StatusBarCheckBox.UseVisualStyleBackColor = true;
+            this.StatusBarCheckBox.CheckedChanged += new System.EventHandler(this.StatusBarCheckBox_CheckedChanged);
             // 
             // pictureBox6
             // 
@@ -1004,6 +1006,7 @@ namespace Clone_wordpad
             this.Default_Scale.Text = "100\n%";
             this.Default_Scale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Default_Scale.UseVisualStyleBackColor = true;
+            this.Default_Scale.Click += new System.EventHandler(this.Default_Scale_Click);
             // 
             // MinusScaleButton
             // 
@@ -1022,6 +1025,7 @@ namespace Clone_wordpad
             this.MinusScaleButton.Text = "Уменьшить";
             this.MinusScaleButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MinusScaleButton.UseVisualStyleBackColor = true;
+            this.MinusScaleButton.Click += new System.EventHandler(this.MinusScaleButton_Click);
             // 
             // PlusScaleButton
             // 
@@ -1040,17 +1044,28 @@ namespace Clone_wordpad
             this.PlusScaleButton.Text = "Увеличить";
             this.PlusScaleButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PlusScaleButton.UseVisualStyleBackColor = true;
+            this.PlusScaleButton.Click += new System.EventHandler(this.PlusScaleButton_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(4, 544);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(975, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(983, 570);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
@@ -1066,7 +1081,6 @@ namespace Clone_wordpad
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -1081,6 +1095,7 @@ namespace Clone_wordpad
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1143,12 +1158,12 @@ namespace Clone_wordpad
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RichTextBox RichTextBoxEditor;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.RichTextBox RichTextBoxEditor;
         private System.Windows.Forms.CheckBox checkBoxBold;
         private System.Windows.Forms.CheckBox checkBoxItalic;
         private System.Windows.Forms.CheckBox checkBoxUnderline;
         private System.Windows.Forms.CheckBox checkBoxStrikeout;
+        private StatusStrip statusStrip1;
     }
 }
 
