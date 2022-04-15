@@ -75,6 +75,7 @@ namespace Clone_wordpad
             this.FontColorbutton = new System.Windows.Forms.Button();
             this.FontSizeComboBox = new System.Windows.Forms.ComboBox();
             this.FontSelectorComboBox = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -112,7 +113,6 @@ namespace Clone_wordpad
             this.PrintDocumentElement = new System.Drawing.Printing.PrintDocument();
             this.PrintDialogElement = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.HeaderPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -768,6 +768,18 @@ namespace Clone_wordpad
             this.FontSelectorComboBox.TabIndex = 2;
             this.FontSelectorComboBox.SelectionChangeCommitted += new System.EventHandler(this.FontSelectorComboBox_SelectedIndexChanged);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Вставить"});
+            this.comboBox1.Location = new System.Drawing.Point(8, 62);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(71, 21);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.Text = "Вставить";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
@@ -1254,18 +1266,6 @@ namespace Clone_wordpad
             this.PrintDialogElement.Document = this.PrintDocumentElement;
             this.PrintDialogElement.UseEXDialog = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Вставить"});
-            this.comboBox1.Location = new System.Drawing.Point(8, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(71, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "Вставить";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1277,6 +1277,7 @@ namespace Clone_wordpad
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.HeaderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
