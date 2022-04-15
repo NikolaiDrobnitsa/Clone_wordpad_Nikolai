@@ -63,6 +63,16 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_vyhod_zdes_pravostoronniy {
+            get {
+                object obj = ResourceManager.GetObject("1_vyhod-zdes-pravostoronniy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap big_pase {
             get {
                 object obj = ResourceManager.GetObject("big_pase", resourceCulture);
@@ -191,6 +201,27 @@ namespace Clone_wordpad.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_157590826_170667a_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-157590826-170667a-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_exclamation_mark_computer_icons_clip_art_exclamation_point_5adde1bb3e0b18_5894561515244906832541_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-exclamation-mark-computer-icons-clip-art-exclamation-point-5adde1bb3e0b18" +
+                        ".5894561515244906832541-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Nikolai_WordPad.
         /// </summary>
         internal static string Label_name {
@@ -222,9 +253,49 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mWordPad_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("mWordPad_icon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap new_def_scale {
             get {
                 object obj = ResourceManager.GetObject("new_def_scale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_form {
+            get {
+                object obj = ResourceManager.GetObject("new_form", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_form_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("new_form-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_form_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("new_form-removebg-preview1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -322,6 +393,38 @@ namespace Clone_wordpad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_windows_seven_yellow_folder_with_blue_arrow_filename_extension_art {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-windows-seven-yellow-folder-with-blue-arrow-filename-extension-art", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_floppy_disk_disk_storage_data_save_store_3_5_1_44_mb_icon_thumbnail_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-floppy-disk-disk-storage-data-save-store-3-5-1-44-mb-icon-thumbna" +
+                        "il-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_black_plastic_office_printer_printing_a_paper_page_png_image_2302044_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-black-plastic-office-printer-printing-a-paper-page-png-image_2302044-remo" +
+                        "vebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap right_write {
             get {
                 object obj = ResourceManager.GetObject("right_write", resourceCulture);
@@ -365,6 +468,16 @@ namespace Clone_wordpad.Properties {
         internal static System.Drawing.Bitmap separator {
             get {
                 object obj = ResourceManager.GetObject("separator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WordPad_icon {
+            get {
+                object obj = ResourceManager.GetObject("WordPad_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

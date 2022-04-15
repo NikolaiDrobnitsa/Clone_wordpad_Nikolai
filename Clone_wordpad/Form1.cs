@@ -36,6 +36,7 @@ namespace Clone_wordpad
         public Form1()
         {
             InitializeComponent();
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             InitializeFonts();
         }
         private void InitializeFonts()
@@ -296,6 +297,7 @@ namespace Clone_wordpad
         {
             if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
                 RichTextBoxEditor.Paste();
+            RichTextBoxEditor.Focus();
         }
 
         private void Copybutton_Click(object sender, EventArgs e)
@@ -483,6 +485,217 @@ namespace Clone_wordpad
         private void PaintButton_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("C:\\Windows\\System32\\mspaint.exe");
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (IsUnsaved)
+            {
+                DialogResult savePrompt = MessageBox.Show("Вы хотите сохранить ваши изменения?", "Nikolai_WordPad", MessageBoxButtons.YesNoCancel);
+
+                switch (savePrompt)
+                {
+                    case DialogResult.Cancel:
+                        break;
+                    case DialogResult.No:
+                        break;
+                    case DialogResult.Yes:
+                        SaveMenuButton_Click(sender, e);
+                        if (!IsUnsaved) Close();
+                        break;
+                }
+                IsOpened = false;
+                RichTextBoxEditor.Text = String.Empty;
+                OpenedDocumentPath = "Новый документ";
+                UpdatePath();
+                tabControl1.SelectedIndex = 1;
+
+            }
+            
+        }
+
+        private void OpenFileButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = DefaultSaveDirectory;
+                openFileDialog.Filter = "Документы (*.rtf;*.pdf;*.txt)|*.rtf;*.pdf;*.txt|Все файлы (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK &&
+                    openFileDialog.FileName.Length > 0)
+                {
+                    OpenedDocumentPath = openFileDialog.FileName;
+                    IsOpened = true; //Файл теперь открыт
+                    UpdatePath();
+
+                    try
+                    {
+                        if (OpenedDocumentPath.EndsWith(".rtf")) 
+                        {
+                            RichTextBoxEditor.LoadFile(OpenedDocumentPath);
+                        }
+                        else if (OpenedDocumentPath.EndsWith(".pdf")) 
+                        {
+                            
+                            MessageBox.Show("PDF Временно не поддерживается!");
+
+                            
+                            IsOpened = false;
+                            RichTextBoxEditor.Text = String.Empty;
+                            OpenedDocumentPath = "Новый документ";
+                            IsUnsaved = false;
+                            UpdatePath();
+                        }
+                        else 
+                        {
+                            var fileStream = openFileDialog.OpenFile();
+                            using (StreamReader reader = new StreamReader(fileStream))
+                            {
+                                RichTextBoxEditor.Text = reader.ReadToEnd();
+                            }
+                        }
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show("Не удалось открыть файл. Возможно он занят другим процессом.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void Savebutton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (IsOpened)
+                {
+                    var dirPath = OpenedDocumentPath.Substring(0, OpenedDocumentPath.LastIndexOf(Path.DirectorySeparatorChar) + 1);
+                    Directory.CreateDirectory(dirPath);
+
+                    RichTextBoxEditor.SaveFile(OpenedDocumentPath,
+                        OpenedDocumentPath.EndsWith(".rtf") ? RichTextBoxStreamType.RichText : RichTextBoxStreamType.PlainText);
+                }
+                else
+                {
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.InitialDirectory = DefaultSaveDirectory;
+                        saveFileDialog.Filter = "Текст с форматированием (*.rtf)|*.rtf|Простой текст (*.txt)|*.txt|Все файлы (*.*)|*.*";
+                        saveFileDialog.FilterIndex = 1;
+                        saveFileDialog.RestoreDirectory = true;
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            var dirPath = saveFileDialog.FileName.Substring(0, saveFileDialog.FileName.LastIndexOf(Path.DirectorySeparatorChar) + 1);
+                            Directory.CreateDirectory(dirPath);
+
+                            RichTextBoxEditor.SaveFile(saveFileDialog.FileName,
+                                saveFileDialog.FileName.EndsWith(".rtf") ? RichTextBoxStreamType.RichText : RichTextBoxStreamType.PlainText);
+
+                            OpenedDocumentPath = saveFileDialog.FileName;
+                            IsOpened = true;
+                            IsUnsaved = false;
+                            UpdatePath();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void Printbutton5_Click(object sender, EventArgs e)
+        {
+            if (PrintDialogElement.ShowDialog() == DialogResult.OK)
+            {
+                PrintDocumentElement.DocumentName = OpenedDocumentPath.Substring(OpenedDocumentPath.LastIndexOf(Path.DirectorySeparatorChar));
+                PrintDocumentElement.Print();
+            }
+        }
+        private void PrintDocument_BeginPrint(object sender, PrintEventArgs e)
+        {
+            char[] param = { '\n' };
+            if (PrintDialogElement.PrinterSettings.PrintRange == PrintRange.Selection)
+            {
+                lines = RichTextBoxEditor.SelectedText.Split(param);
+            }
+            else
+            {
+                lines = RichTextBoxEditor.Text.Split(param);
+            }
+            int i = 0;
+            char[] trimParam = { '\r' };
+            foreach (string s in lines)
+            {
+                lines[i++] = s.TrimEnd(trimParam);
+            }
+        }
+
+        private int linesPrinted;
+        private string[] lines;
+
+        private void OnPrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int x = e.MarginBounds.Left;
+            int y = e.MarginBounds.Top;
+            Brush brush = new SolidBrush(RichTextBoxEditor.ForeColor);
+
+            while (linesPrinted < lines.Length)
+            {
+                e.Graphics.DrawString(lines[linesPrinted++],
+                    RichTextBoxEditor.Font, brush, x, y);
+                y += 15;
+                if (y >= e.MarginBounds.Bottom)
+                {
+                    e.HasMorePages = true;
+                    return;
+                }
+            }
+
+            linesPrinted = 0;
+            e.HasMorePages = false;
+        }
+
+        private void Infobutton6_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutBox = new AboutBox1();
+            aboutBox.Show();
+        }
+
+        private void Exitbutton7_Click(object sender, EventArgs e)
+        {
+            if (IsUnsaved)
+            {
+                DialogResult savePrompt = MessageBox.Show("Вы хотите сохранить ваши изменения?", "MiniWordPad", MessageBoxButtons.YesNoCancel);
+
+                switch (savePrompt)
+                {
+                    case DialogResult.Cancel:
+                        break;
+                    case DialogResult.No:
+                        Close();
+                        break;
+                    case DialogResult.Yes:
+                        SaveMenuButton_Click(sender, e);
+                        if (!IsUnsaved) Close();
+                        break;
+                }
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
+                RichTextBoxEditor.Paste();
+            RichTextBoxEditor.Focus();
         }
 
         private void Boltbutton_Click(object sender, EventArgs e)

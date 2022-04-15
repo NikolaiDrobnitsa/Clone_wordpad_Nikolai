@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +202,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dis_select_all.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-windows-seven-yellow-folder-with-blue-arrow-filename-extension-art.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_form-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-floppy-disk-disk-storage-data-save-store-3-5-1-44-mb-icon-thumbnail-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-black-plastic-office-printer-printing-a-paper-page-png-image_2302044-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-exclamation-mark-computer-icons-clip-art-exclamation-point-5adde1bb3e0b18.5894561515244906832541-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_vyhod-zdes-pravostoronniy.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_form-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-157590826-170667a-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WordPad_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mWordPad_icon-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
